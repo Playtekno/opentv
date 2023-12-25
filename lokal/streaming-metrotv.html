@@ -12,58 +12,35 @@
         "canonical": "https://aiplus.pages.dev/"
       });
     </script>
+	<link href=//opentv.pages.dev rel=dns-prefetch>
     <link href=//op-group1-swiftservehd-1.dens.tv rel=dns-prefetch>
 <meta charset="UTF-8">
 <title>Streaming MetroTV</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1" data-qmeta="1">
 <style type="text/css">
     body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
     *{margin:0;border:0;padding:0;text-decoration:none}
     #stats{position:fixed;top:5px;left:10px;font-size:12px;color:#fdfdfd;z-index:2147483647;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
-    #dplayer{position:inherit}
+#dplayer {position: inherit;
+        }
+
+        @media screen and (max-width: 768px) { /* Sesuaikan ukuran media query dengan kebutuhan Anda */
+            #dplayer {
+                position: inherit;
+                top: 50%;
+                left: auto;
+                transform: none;
+                 width: 100%;
+            height: 100%;
+            }
+        }
 .dplayer-logo{pointer-events:none;position:absolute;left:20px;top:20px;max-width:100px;max-height:100px}.dplayer-logo img{max-width:100%;max-height:100%;background:none}
 </style>
-<script type="application/ld+json" data-qmeta="ldJson">{
-								"@context":"https://schema.org",
-								"@graph":[
-									{
-										"@type":"VideoObject",
-										"embedUrl":"https://www.visionplus.id/watch/channel/3/gtv?cnumb=3",
-										"name":"GTV",
-										"publication":{
-											"@type":"BroadcastEvent",
-											"isLiveBroadcast":true,
-											"startDate":"2023-12-24T00:00:00+07:00",
-											"endDate":"2023-12-24T23:59:59+07:00"
-										},
-										"description":"Nikmati program TV Spongebob, Big Movies Platinum, Legenda Sang Penunggu, Voice Of Ramadan, serta berita selebritis obsesi secara Gratis.",
-										"thumbnailUrl":"https://static.mncnow.id/images/channel/6962410c/a91f.jpg",
-										"uploadDate":"2023-12-24T14:02:30+07:00",
-										"potentialAction":[
-											{
-												"@type":"WatchAction",
-												"target":{
-													"@type":"EntryPoint",
-													"urlTemplate":"https://www.visionplus.id/watch/channel/3/gtv?cnumb=3",
-													"actionPlatform":[
-														"http://schema.org/DesktopWebPlatform",
-														"http://schema.org/MobileWebPlatform",
-														"http://schema.org/IOSPlatform",
-														"http://schema.org/AndroidPlatform",
-														"http://schema.org/AndroidTVPlatform"
-													]
-												}
-											}
-										]
-									}
-								]
-							}</script>
 </head>
 </body>
 <div id="dplayer"></div>
 <div id="stats"></div>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="dplayer.js"></script>
+<script src="https://opentv.pages.dev/js/opentvp2p.js"></script>
+<script src="https://opentv.pages.dev/js/opentvplayer.js"></script>
 <script>
     var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
     var type = 'normal';
@@ -74,11 +51,11 @@
         container: document.getElementById('dplayer'),
 		theme: '#FADFA3',
         autoplay: true,
-		logo: 'logo/logo.png',
+		logo: 'https://opentv.pages.dev/img/logo-player.png',
 		text: 'custom2',
 		mutex: true,
         video: {
-            url: 'https://op-group1-swiftservehd-1.dens.tv/h/h211/index.m3u8',
+            url: 'https://op-group1-swiftservehd-1.dens.tv/h/h211/01.m3u8',
             type: type,
 			pic: 'https://i.pinimg.com/1200x/6f/2e/3d/6f2e3d822753437144af3aaa2b89af9d.jpg',
             customType: {
@@ -114,3 +91,5 @@
         document.getElementById('stats').innerText = text
     }
 </script>
+  </body>
+  </html>
