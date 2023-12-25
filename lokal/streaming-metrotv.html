@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+  <html lang=id>
+  <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        "title": "Portal Berita AI Terupdate - AIPlus.pages.dev",
+        "description": "AIPlus adalah portal berita yang fokus menyajikan informasi perkembangan terbaru dalam penelitian AI, aplikasi AI dalam berbagai bidang, hingga tren dan berita seputar AI" > ,
+        "keywords": "ai, aiplus, ai online, berita ai, ai news, info ai terbaru, berita artificial intelligence terbaru, berita artificial intelligence hari ini, berita ai terbaru, update ai terbaru, informasi ai, ai free, wombo ai, chatgpt openai, web ai. ai web, ai openai, ai asking, cara membuat artificial intelligence, apakah itu artificial intelligence, cara menggunakan artificial intelligence, generative ai, artificial intelligence site, artificial ai, artificial intelligence and ai" > ,
+        "content_category": "Tech",
+        "content_subcategory": "artificial intelligence",
+        "canonical": "https://aiplus.pages.dev/"
+      });
+    </script>
+    <link href=//op-group1-swiftservehd-1.dens.tv rel=dns-prefetch>
+<meta charset="UTF-8">
+<title>Streaming MetroTV</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" data-qmeta="1">
+<style type="text/css">
+    body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+    *{margin:0;border:0;padding:0;text-decoration:none}
+    #stats{position:fixed;top:5px;left:10px;font-size:12px;color:#fdfdfd;z-index:2147483647;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
+    #dplayer{position:inherit}
+.dplayer-logo{pointer-events:none;position:absolute;left:20px;top:20px;max-width:100px;max-height:100px}.dplayer-logo img{max-width:100%;max-height:100%;background:none}
+</style>
+<script type="application/ld+json" data-qmeta="ldJson">{
+								"@context":"https://schema.org",
+								"@graph":[
+									{
+										"@type":"VideoObject",
+										"embedUrl":"https://www.visionplus.id/watch/channel/3/gtv?cnumb=3",
+										"name":"GTV",
+										"publication":{
+											"@type":"BroadcastEvent",
+											"isLiveBroadcast":true,
+											"startDate":"2023-12-24T00:00:00+07:00",
+											"endDate":"2023-12-24T23:59:59+07:00"
+										},
+										"description":"Nikmati program TV Spongebob, Big Movies Platinum, Legenda Sang Penunggu, Voice Of Ramadan, serta berita selebritis obsesi secara Gratis.",
+										"thumbnailUrl":"https://static.mncnow.id/images/channel/6962410c/a91f.jpg",
+										"uploadDate":"2023-12-24T14:02:30+07:00",
+										"potentialAction":[
+											{
+												"@type":"WatchAction",
+												"target":{
+													"@type":"EntryPoint",
+													"urlTemplate":"https://www.visionplus.id/watch/channel/3/gtv?cnumb=3",
+													"actionPlatform":[
+														"http://schema.org/DesktopWebPlatform",
+														"http://schema.org/MobileWebPlatform",
+														"http://schema.org/IOSPlatform",
+														"http://schema.org/AndroidPlatform",
+														"http://schema.org/AndroidTVPlatform"
+													]
+												}
+											}
+										]
+									}
+								]
+							}</script>
+</head>
+</body>
+<div id="dplayer"></div>
+<div id="stats"></div>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="dplayer.js"></script>
+<script>
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    var type = 'normal';
+    if(Hls.isSupported() && Hls.WEBRTC_SUPPORT) {
+        type = 'customHls';
+    }
+    const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+		theme: '#FADFA3',
+        autoplay: true,
+		logo: 'logo/logo.png',
+		text: 'custom2',
+		mutex: true,
+        video: {
+            url: 'https://op-group1-swiftservehd-1.dens.tv/h/h211/index.m3u8',
+            type: type,
+			pic: 'https://i.pinimg.com/1200x/6f/2e/3d/6f2e3d822753437144af3aaa2b89af9d.jpg',
+            customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            live: true,        // set to false in VOD mode
+                            // token: YOUR_TOKEN
+                            // Other p2pConfig options provided by CDNBye
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+                }
+            }
+        }
+    });
+
+    function updateStats() {
+        var text = 'P2P Status: Aktif';
+        document.getElementById('stats').innerText = text
+    }
+</script>
