@@ -236,15 +236,32 @@
   margin-right: 0px; /* Sesuaikan jarak antara gambar dan teks */
 }
     </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-MG63VVPYHZ');
-</script>
+  gtag('config', 'G-MG63VVPYHZ');	
+    <script>
+      var tag = document.createElement("script");
+tag.src = "https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+tag.onload = function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-MG63VVPYHZ");
+
+  setInterval(function() {
+    gtag("event", "page_view", {
+      page_location: window.location.href,
+      page_title: document.title
+    });
+  }, 15000);
+};
+    </script>
     <script>
       window.console = window.console || function(o) {}
     </script>
