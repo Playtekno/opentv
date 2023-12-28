@@ -1,6 +1,6 @@
 <HTML style="overflow:auto;">
 <HEAD>
-<title>Streaming Trans7 - OpenTV.pages.dev</title>
+<title>Streaming trans7 - OpenTV.pages.dev</title>
 <meta name="generator" content="JDiff v1.1.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -340,9 +340,19 @@ img#vjs-logobrand-image {
 	display: none;
 }
 </style>
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/peer.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/apiCDNP2P.js"></script>
 <script>
-  apiCDNP2P({host:"peerjs.jairagne.ovh",port:"9000",key: 'peerjs',debug:3});
-</script>
+  apiCDNP2P({host:"52.38.144.179",port:"9000",key: 'peerjs',debug:3,secure:true,config: {
+  iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' },
+    { urls: 'stun:stun1.l.google.com:19302' },
+    { urls: 'stun:stun2.l.google.com:19302' }
+  ]
+}});
+</script
 <script async src="https://arc.io/widget.min.js#JMAhfwPS"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ"></script>
 <script>
@@ -375,15 +385,13 @@ tag.onload = function() {
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
 
 
-<script src="https://raw.githubusercontent.com/Iragne/PCDN/master/client/js/peer.js"></script>
-<script src="https://raw.githubusercontent.com/Iragne/PCDN/master/client/js/apiCDNP2P.js"></script>
-<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-<script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
+
 
 <div id='vplayer'>
-<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" autoplay preload="auto" playsinline webkit-playsinline>
-<source src="https://vod.linknetott.swiftcontent.com/Content/HLS/Live/Channel(ch397}/index.m3u8" type='application/vnd.apple.mpegurl'>
-</video></div></div>
+<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" poster="https://opentv.pages.dev/banner.webp" autoplay controls preload="auto" playsinline webkit-playsinline>
+<source src="https://video.detik.com/trans7/smil:trans7.smil/playlist.m3u8" type='application/vnd.apple.mpegurl'>
+
+   </video></div></div>
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
@@ -402,7 +410,7 @@ tag.onload = function() {
 	plugins: {
 			videoJsResolutionSwitcher: {
 			    ui: true,
-				default: 'mid',
+				default: 'low',
 				dynamicLabel: false
 			}
 		}
@@ -440,7 +448,6 @@ function skipS3MV(skipBy) {
     player.currentTime(player.currentTime() + skipBy);
 }
 </script>
- 
 <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
 <script>
     DisableDevtool({
