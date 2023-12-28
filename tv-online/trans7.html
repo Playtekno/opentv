@@ -381,9 +381,11 @@ tag.onload = function() {
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
 
 <div id='vplayer'>
-<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" poster="https://opentv.pages.dev/banner.webp" autoplay controls preload="auto" playsinline webkit-playsinline>
-<source src="https://video.detik.com/trans7/smil:trans7.smil/playlist.m3u8" type="application/x-mpegURL">
-   </video></div></div>
+<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" autoplay preload="auto" playsinline webkit-playsinline>
+<source src="https://video.detik.com/trans7/smil:trans7.smil/chunklist_w1592609227_b344100_sleng.m3u8" type='application/vnd.apple.mpegurl' label='LOW' res='360'>
+<source src="https://video.detik.com/trans7/smil:trans7.smil/chunklist_w1592609227_b544100_sleng.m3u8" type='application/vnd.apple.mpegurl' label='SD' res='480'>
+<source src="https://video.detik.com/trans7/smil:trans7.smil/chunklist_w1592609227_b744100_sleng.m3u8" type='application/vnd.apple.mpegurl' label='HD' res='720'>
+</video></div></div>
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
@@ -414,20 +416,6 @@ tag.onload = function() {
   </script>
 <script>
 videojs('vjsplayer').videoJsResolutionSwitcher()
-</script>
-<script>
-// Membuat fungsi untuk menggunakan proxy CORS
-function useCorsProxy(url) {
-  // Membuat URL proxy dengan menambahkan URL asli ke endpoint proxy
-  var proxyUrl = 'https://goodrive.xyz/' + encodeURIComponent(url);
-  
-  // Mengatur source URL pada video menggunakan proxy URL
-  video.src(proxyUrl);
-}
-
-// Menggunakan fungsi useCorsProxy untuk mengatur source URL pada video
-var video = videojs('vjsplayer');
-useCorsProxy('https://video.detik.com/trans7/smil:trans7.smil/playlist.m3u8');
 </script>
 <script>
 var player = videojs('vjsplayer');
