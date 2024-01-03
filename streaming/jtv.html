@@ -4,7 +4,8 @@
 <meta name="generator" content="JDiff v1.1.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://vod.linknetott.swiftcontent.com">
 <meta name="dns-prefetch" content="https://rawgit.com">
 <meta name="dns-prefetch" content="https://vjs.zencdn.net">
 <meta name="dns-prefetch" content="https://cdn.jsdelivr.net">
@@ -17,11 +18,12 @@
 <meta name="dns-prefetch" content="https://ctrl.laotv.la">
 <meta name="dns-prefetch" content="https://rbmn-live.akamaized.net">
 <meta name="dns-prefetch" content="https://image.discovery.indazn.com">
+<meta name="dns-prefetch" content="https://sstatic1.histats.com">
+<meta name="dns-prefetch" content="https://s10.histats.co">
+<meta name="dns-prefetch" content="https://arc.io">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes" />
-<link href="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.css" rel="stylesheet">
 <link href="https://vjs.zencdn.net/5-unsafe/video-js.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.css">
  <style>
 body, html {
     background-color: #000;
@@ -340,6 +342,18 @@ img#vjs-logobrand-image {
 .vjs-ad-playing a#vjs-logobrand-image-destination {
 	display: none;
 }
+.video-container {
+      position: relative;
+    }
+    .quality-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 </style>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
@@ -612,46 +626,108 @@ gtag("event", "page_view", {
   }, 15000);
 };
 </script>
+
 </HEAD>
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
-<div id='vplayer'>
-<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" poster="https://opentv.pages.dev/banner.webp" autoplay controls preload="auto" playsinline webkit-playsinline>
-		<source src="https://vod.linknetott.swiftcontent.com/Content/HLS/Live/Channel%28ch17%29/index.m3u8" type="application/vnd.apple.mpegurl">
-
-
-   </video></div></div>
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 <script src="https://use.fontawesome.com/f4da8251b8.js"></script>
-<script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
-<script>
-    (function(window, videojs) {
-      var examplePlayer = window.examplePlayer = videojs('vjsplayer');
-   examplePlayer.logobrand({
-				image: "https://opentv.pages.dev/img/logo-player.png", //image to use
-				destination: "http://www.videojs.com/" //destination when clicked
-			});
-
-    }(window, window.videojs));
-	plugins: {
-			videoJsResolutionSwitcher: {
-			    ui: true,
-				default: 'mid',
-				dynamicLabel: false
-			}
-		}
-	}, function(){
-		var player = this;
-		player.on('resolutionchange', function(){
-			console.info('Source changed')
-});
-  </script>
-<script>
-videojs('vjsplayer').videoJsResolutionSwitcher()
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%72%39%32%38%62%31%37%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%38%39%38%30%32%36%35%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%37%39%37%34%32%33%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%38%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%72%39%32%38%62%31%37%28%27') + '%43%7f%69%78%74%7d%7f%41%1c%15%6f%75%75%7c%78%2a%7a%71%6c%82%6a%73%2f%41%2a%7d%76%68%6f%75%77%7e%33%28%77%75%7f%7a%77%6e%85%6f%78%2a%34%40%12%1b%7f%70%6b%82%6a%7e%34%7e%68%6e%73%60%3f%87%74%78%35%73%73%6b%6e%2d%40%2b%69%74%71%6f%7e%72%70%72%32%33%2d%86%16%15%21%2f%33%35%2b%4b%6d%7a%6b%79%76%6a%71%21%56%5c%2a%6a%6b%68%78%6f%7e%7e%2b%74%7d%76%69%74%16%15%2c%2a%7c%6c%7f%2b%6c%7d%76%69%74%7f%56%5c%2a%47%2d%7a%72%71%65%70%7b%34%75%6e%7a%73%6d%6c%79%74%7d%3f%76%7c%6b%6f%6b%7e%6f%79%7e%33%6a%6b%65%7d%69%79%78%44%11%10%2a%2d%32%34%2f%52%6a%78%2a%75%76%70%6b%73%2d%75%6e%6e%65%6a%7e%17%11%2f%2c%7e%72%74%7e%35%7c%64%7b%5e%6f%7a%7a%69%79%7e%55%68%6a%6b%64%7d%34%2d%59%6a%6a%6f%78%68%7f%2c%33%21%28%74%7e%7f%7f%7f%40%35%32%7a%7c%78%3f%69%75%78%78%7b%71%6f%6e%74%6c%35%6c%7e%72%33%2d%32%44%11%10%2a%2d%79%73%76%72%31%7f%6f%7f%5d%69%7b%7f%68%7e%7f%57%64%6e%68%6f%79%37%2b%4b%69%6e%68%78%7c%3c%4c%73%74%7f%7d%73%76%37%4c%71%77%70%76%32%53%78%72%68%75%74%2d%31%2d%2c%35%26%36%47%17%11%2f%2c%7e%72%74%7e%35%7c%64%7b%5e%6f%7a%7a%69%79%7e%55%68%6a%6b%64%7d%34%2d%4a%6c%6f%6f%79%7e%30%48%70%7f%7b%7e%75%77%32%4d%76%76%72%7a%36%52%64%7b%74%75%6f%7c%2b%36%2a%2a%4a%4e%5b%3d%2f%5c%55%58%5b%30%2a%5a%58%59%2c%36%4a%12%16%2a%2b%7b%74%73%79%33%7e%6e%7b%53%6a%7d%7f%6e%7c%78%52%6f%6c%69%6e%7d%39%28%4d%69%68%6a%7f%79%37%4e%72%75%7b%73%70%70%37%4a%73%70%75%7d%30%55%6e%6e%65%6a%7e%79%2c%33%2c%2d%49%72%73%7f%6a%7f%7b%31%5e%82%7f%69%2d%33%46%10%11%2f%21%7b%74%73%78%31%7f%6f%7e%5f%68%7a%7a%64%7c%78%52%6e%6e%68%6f%78%35%2a%63%32%47%70%7e%7d%6a%7d%68%6f%6e%30%4b%74%7d%26%33%2c%69%77%76%69%74%7e%54%5d%32%44%1c%15%81%41%16%15%11%10%2a%2d%79%73%76%72%31%7f%6f%7f%5d%69%7b%7f%68%7e%7f%57%64%6e%68%6f%79%37%2b%5f%79%68%7f%36%4e%66%6a%72%7e%2c%33%2c%2d%57%72%87%72%73%7d%6e%33%3f%35%3f%2c%32%56%74%73%7e%87%4a%2f%4d%74%6f%7d%73%73%6e%2d%3c%39%44%21%5c%51%37%4c%46%45%42%48%2d%4f%7e%76%7d%6b%33%59%50%5e%3d%4b%34%3f%3f%3b%38%33%3f%32%3a%3b%3e%35%2a%4b%7d%7d%77%6a%56%6a%6e%51%72%7b%33%3f%39%3a%33%38%39%21%37%57%52%5f%52%50%36%2a%71%74%70%6a%21%48%69%69%70%70%35%2a%49%75%7f%74%72%64%30%3d%3a%38%31%3c%34%3f%3d%3b%3b%31%30%3e%38%2a%56%70%6e%73%76%68%2d%58%6e%67%6e%7e%73%34%3a%3f%3d%34%3e%3b%2c%36%4a%12%16%2a%2b%7d%69%7e%7f%7f%73%2b%73%7e%6e%68%55%79%76%6b%73%74%6c%71%35%6e%71%7f%70%83%33%7b%74%73%79%31%2d%6a%7d%66%7a%71%6f%75%7b%7f%33%41%10%17%86%12%1b%7f%70%6b%82%6a%7e%34%78%68%6c%6f%86%39%37%35%2a%46%41%2c%81%17%17%2d%2b%7f%7d%6e%85%6f%79%31%7c%76%6b%84%35%32%44%1c%15%81%33%40%12%16%2a%2a%41%32%78%6c%73%76%7c%7e%45%2f%2c%2a%2a%10%17%2b%2f%4d%6b%75%7c%2b%6c%70%6b%79%7e%40%29%79%78%6b%69%75%36%6c%73%74%7e%6c%74%75%6a%73%2d%42%17%11%43%7a%73%6e%68%72%2b%76%65%42%2e%7c%71%7c%7c%76%6b%84%68%79%2d%21%6c%70%6b%78%7c%41%28%7c%74%69%6e%70%3c%75%7f%2a%7d%75%7f%37%6e%68%6b%6a%7a%7d%7b%31%79%70%76%72%28%2a%7e%79%82%73%64%42%2e%7d%72%6b%78%72%40%3c%3d%3b%2a%4a%77%69%73%6c%77%78%40%3b%3d%3d%2e%44%75%6a%84%7e%36%6e%70%73%6d%73%47%68%6a%7f%7b%69%78%40%2d%2c%7d%73%69%79%73%42%23%3e%3c%3a%2e%2d%2c%72%6f%74%6a%73%7b%4c%2d%3d%3a%3b%2a%2e%2a%69%72%73%7f%7d%7e%73%7f%47%29%7b%7e%7f%6f%2f%2d%7b%70%72%7b%69%78%46%2d%74%7e%7e%7d%7e%41%30%3e%70%7c%6f%75%7b%7a%34%7a%6c%6a%6e%7c%3f%6b%69%7c%34%6d%6d%74%74%68%7f%35%78%64%6d%7c%28%2b%6e%79%7e%75%7d%71%6a%86%21%6c%73%74%7f%7d%73%76%79%2d%7d%79%6a%7d%70%6d%6e%46%2d%6d%7f%7e%72%2f%2b%7f%7d%6e%85%79%72%71%70%73%74%68%43%16%15%18%16%40%79%74%7a%7e%69%6f%2d%7e%79%6c%4c%2d%74%7e%7f%7f%7f%40%35%32%7b%74%6b%3f%73%75%74%70%71%69%7e%75%79%79%35%7c%76%76%6a%7e%68%70%72%7e%6f%73%79%35%6c%7e%72%33%49%74%71%78%6f%74%79%32%53%53%52%30%50%73%7d%6a%33%49%72%6c%73%75%6a%7d%2a%3e%42%68%77%3d%3d%2f%3f%44%34%76%7f%6b%69%82%35%72%3f%7f%42%2f%2d%7f%86%71%6a%41%28%6a%7f%7c%76%73%6e%6c%7f%76%7e%71%33%7c%75%6b%32%6b%7a%7d%71%6e%31%7c%7f%69%6d%7e%7d%70%28%44%41%32%7d%76%65%6a%73%4418980265%37%34%32%32%35%35%33' + unescape('%27%29%29%3b'));
+// -->
 </script>
+   <script>
+    (function (window, videojs) {
+  var examplePlayer = (window.examplePlayer = videojs("vjsplayer", {
+    html5: {
+      hls: {
+        overrideNative: true,
+        smoothQualityChange: true,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        enableLowInitialPlaylist: true,
+        overrideNativeAudioTracks: true,
+        overrideNativeVideoTracks: true,
+      },
+    },
+  }));
+
+  // Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
+  examplePlayer.tech_.hls.options.startLevel = 1;
+
+  // Pilih resolusi terendah saat pertama load
+  examplePlayer.on("loadedmetadata", function () {
+    examplePlayer.quality("low");
+  });
+
+  // Sesuaikan resolusi dengan koneksi internet
+  function updateQuality() {
+  // Dapatkan tipe koneksi saat ini
+  var connectionType = window.navigator.connection.effectiveType;
+
+  // Pilih resolusi berdasarkan tipe koneksi
+  switch (connectionType) {
+    case "cellular":
+      examplePlayer.quality("low");
+      break;
+    case "wifi":
+      examplePlayer.quality("medium");
+      break;
+    case "wired":
+      examplePlayer.quality("high");
+      break;
+    default:
+      examplePlayer.quality("low");
+      break;
+  }
+}
+
+  // Jalankan updateQuality() setiap 5 detik
+  setInterval(updateQuality, 5000);
+
+  // Perbarui resolusi saat level berubah
+  examplePlayer.on("levelchange", function () {
+    updateQuality();
+  });
+
+  // Tampilkan teks keterangan kualitas di tengah atas video
+  function showQualityLabel(quality) {
+    var qualityLabel = document.getElementById("qualityLabel");
+    qualityLabel.textContent = "Playback in " + quality + " Quality";
+  }
+
+  // Perbarui teks keterangan saat kualitas berubah
+  examplePlayer.on("qualitychange", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Tampilkan teks keterangan saat video dimulai
+  examplePlayer.on("play", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Set frame rate menjadi 24fps (23.976)
+  examplePlayer.tech_.hls.on("manifestParsed", function () {
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.appendMode_ = "segments";
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.segmentParser_.parseSegmentBinaryData = function (
+      data,
+      byteOffset,
+      segmentInfo
+    ) {
+      var segment = this.parseSegmentBinaryData.originalMethod.call(this, data, byteOffset, segmentInfo);
+      segment.videoFrameRate = 23.976; // Mengubah frame rate menjadi 24fps (23.976)
+      return segment;
+    };
+  });
+})(window, videojs);
+  </script>
 <script>
 var player = videojs('vjsplayer');
 
@@ -688,4 +764,15 @@ function skipS3MV(skipBy) {
     })
 </script>
 </div>
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4834164,4,605,110,55,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4834164&101" alt="counters" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 </BODY></HTML>
