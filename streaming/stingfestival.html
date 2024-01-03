@@ -1,0 +1,778 @@
+<HTML style="overflow:auto;">
+<HEAD>
+<title></title>
+<meta name="generator" content="JDiff v1.1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="dns-prefetch" content="https://opentv.pages.dev/">
+<meta name="dns-prefetch" content="https://vod.linknetott.swiftcontent.com">
+<meta name="dns-prefetch" content="https://rawgit.com">
+<meta name="dns-prefetch" content="https://vjs.zencdn.net">
+<meta name="dns-prefetch" content="https://cdn.jsdelivr.net">
+<meta name="dns-prefetch" content="https://assets.nflxext.com">
+<meta name="dns-prefetch" content="https://op-group1-swiftservehd-1.dens.tv">
+<meta name="dns-prefetch" content="https://cdnjs.cloudflare.com">
+<meta name="dns-prefetch" content="https://unpkg.com">
+<meta name="dns-prefetch" content="https://raw.githubusercontent.com">
+<meta name="dns-prefetch" content="https://peerjs.jairagne.ovh">
+<meta name="dns-prefetch" content="https://ctrl.laotv.la">
+<meta name="dns-prefetch" content="https://rbmn-live.akamaized.net">
+<meta name="dns-prefetch" content="https://image.discovery.indazn.com">
+<meta name="dns-prefetch" content="https://sstatic1.histats.com">
+<meta name="dns-prefetch" content="https://s10.histats.co">
+<meta name="dns-prefetch" content="https://arc.io">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes" />
+<link href="https://vjs.zencdn.net/5-unsafe/video-js.css" rel="stylesheet">
+ <style>
+body, html {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+canvas {
+    position:absolute;
+}
+</style>
+<style>
+@charset "UTF-8";
+@font-face {
+  font-family: nf-icon;
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-86.eot);
+  src: url(https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-86.eot?#iefix) format("embedded-opentype"), url(https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-86.woff) format("woff"), url(https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-86.ttf) format("truetype"), url(https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-86.svg#nf-icon-v1-86) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+.video-js {
+  /* The base font size controls the size of everything, not just text.
+     All dimensions use em-based sizes so that the scale along with the font size.
+     Try increasing it to 15px and see what happens. */
+  font-size: 16px;
+  /* The main font color changes the ICON COLORS as well as the text */
+  color: #cacaca;
+}
+:focus {
+  outline: none;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+  font-size: 3em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 3em;
+  /* 0.06666em = 2px default */
+  border: 0.06666em solid #fff;
+  /* 0.3em = 9px default */
+  border-radius: 0.3em;
+  /* Align center */
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -0.75em;
+}
+
+.video-js .vjs-play-control,
+.video-js .vjs-remaining-time,
+.video-js .vjs-volume-menu-button {
+  border-right: 1px solid #323232;
+}
+
+.video-js .vjs-volume-menu-button .vjs-menu-content:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.video-js .vjs-volume-menu-button .vjs-menu-content .vjs-volume-bar {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* The default color of control backgrounds is mostly black but with a little
+   bit of blue so it can still be seen on all-black video frames, which are common. */
+.video-js .vjs-control:before {
+  font-family: nf-icon;
+}
+.video-js .vjs-control.vjs-play-control:before {
+  content: "";
+}
+.video-js .vjs-control.vjs-play-control.vjs-playing:before {
+  content: "";
+}
+.video-js .vjs-control.vjs-fullscreen-control:before {
+  content: "";
+}
+.video-js .vjs-control.vjs-volume-menu-button:before {
+  content: "";
+}
+.video-js .vjs-control.vjs-captions-button:before {
+  content: "";
+}
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: #262626;
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: rgba(38, 38, 38, 0.9);
+}
+
+.video-js .vjs-control-bar {
+  background-color: rgba(38, 38, 38, 0.9);
+  width: auto;
+  left: 4em;
+  right: 4em;
+  bottom: 2em;
+  border-radius: 0.5em;
+}
+.video-js .vjs-control-bar:hover .vjs-progress-control {
+  opacity: 1;
+  top: -2.5em;
+}
+.video-js .vjs-control-bar .vjs-menu {
+  z-index: 2;
+  height: 100%;
+}
+
+.video-js.vjs-fullscreen .vjs-control-bar {
+  bottom: 4em;
+}
+
+.video-js .vjs-current-time {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -2.5em;
+}
+
+/* Slider - used for Volume bar and Progress bar */
+.video-js .vjs-slider {
+  background-color: #2e2e2e;
+  background-color: rgba(46, 46, 46, 0.8);
+  border-radius: 1em;
+  margin: 0;
+}
+
+.video-js .vjs-remaining-time {
+  flex: 1;
+  text-align: left;
+}
+
+/* The slider bar color is used for the progress bar and the volume bar
+   (the first two can be removed after a fix that's coming) */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #cacaca;
+  border-radius: 1em;
+}
+
+.video-js .vjs-play-progress {
+  color: #b7090b;
+  background: #b7090b;
+  font-size: 1.3em;
+}
+.video-js .vjs-play-progress:before {
+  transition: width 0.1s ease-out, height 0.1s ease-out;
+  content: "";
+  top: -0.2em;
+  border: 0;
+  background: radial-gradient(#b7090b 33%, #830607);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  box-shadow: #000 0 0 2px;
+}
+.video-js .vjs-play-progress:hover:before {
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid transparent;
+}
+
+.video-js .vjs-progress-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 4em 0 0.4em;
+  top: -2.3em;
+  border-radius: 1em;
+  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear, -moz-transform 150ms linear, -o-transform 150ms linear;
+  z-index: 1;
+  opacity: 0;
+}
+.video-js .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: inherit;
+}
+.video-js .vjs-progress-control .vjs-mouse-display {
+  background: #cacaca;
+}
+.video-js .vjs-progress-control .vjs-mouse-display:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top-color: #262626;
+  border-width: 0.8em;
+  right: 25%;
+  margin-left: -0.8em;
+}
+
+.video-js .vjs-time-tooltip {
+  background: #cacaca !important;
+  color: #b7090b;
+}
+.video-js .vjs-time-tooltip:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top-color: #262626;
+  border-width: 0.8em;
+  right: 25%;
+  margin-left: -0.8em;
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-load-progress {
+  height: 0.7em !important;
+}
+
+.video-js .vjs-progress-holder {
+  height: 0.9em;
+}
+
+/* The main progress bar also has a bar that shows how much has been loaded. */
+.video-js .vjs-load-progress {
+  /* For IE8 we'll lighten the color */
+  background: #3a3a3a;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(46, 46, 46, 0.5);
+  border-radius: 1em;
+  height: 0.9em !important;
+}
+
+/* The load progress bar also has internal divs that represent
+   smaller disconnected loaded time ranges */
+.video-js .vjs-load-progress div {
+  /* For IE8 we'll lighten the color */
+  background: #3a3a3a;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(46, 46, 46, 0.75);
+  border-radius: 1em;
+  height: 0.9em !important;
+}
+
+.vjs-loading-spinner {
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  animation: vjs-spinner-fade-out 2s linear 1;
+  animation-delay: 2s;
+}
+.vjs-loading-spinner:before, .vjs-loading-spinner:after {
+  border: none;
+}
+.vjs-loading-spinner:after {
+  background-image: url(img/site-spinner.png);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+
+.vjs-seeking .vjs-loading-spinner:after,
+.vjs-waiting .vjs-loading-spinner:after {
+  animation: vjs-spinner-spin 1.1s linear infinite, vjs-spinner-fade 1.1s linear 1 !important;
+  animation-delay: 2s;
+}
+
+.vjs-seeking .vjs-loading-spinner,
+.vjs-waiting .vjs-loading-spinner {
+  opacity: 1;
+  visibility: visible;
+  animation: vjs-spinner-fade-in 2s linear 1;
+  animation-delay: 2s;
+}
+
+@keyframes vjs-spinner-fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes vjs-spinner-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+  }
+}
+img#vjs-logobrand-image {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	transition: visibility 0.1s ease 0s, opacity 0.1s ease 0s;
+    visibility: visible;
+}
+.vjs-user-inactive img#vjs-logobrand-image {
+	visibility: hidden;
+}
+.vjs-user-inactive.vjs-paused img#vjs-logobrand-image {
+	visibility: visible;
+}
+.vjs-ad-playing a#vjs-logobrand-image-destination {
+	display: none;
+}
+.video-container {
+      position: relative;
+    }
+    .quality-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/videojs.hls.orig.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/peer.js"></script>
+<script src="https://raw.githubusercontent.com/titpetric/PeerLive/master/clientVOD/js/apiCDNP2P.js"></script>
+<script>
+  apiCDNP2P({host:"52.38.144.179",port:"9000",key: 'peerjs',debug:3,secure:true,config: {
+  iceServers: [
+{ urls: 'stun:stun.l.google.com:19302' },
+{ urls: 'stun:stun1.l.google.com:19302' },
+{ urls: 'stun:stun2.l.google.com:19302' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun1.l.google.com:19302
+{ urls: 'stun2.l.google.com:19302
+{ urls: 'stun3.l.google.com:19302
+{ urls: 'stun4.l.google.com:19302
+{ urls: '23.21.150.121:3478' },
+{ urls: 'iphone-stun.strato-iphone.de:3478' },
+{ urls: 'numb.viagenie.ca:3478' },
+{ urls: 'stun.12connect.com:3478' },
+{ urls: 'stun.12voip.com:3478' },
+{ urls: 'stun.1und1.de:3478' },
+{ urls: 'stun.2talk.co.nz:3478' },
+{ urls: 'stun.2talk.com:3478' },
+{ urls: 'stun.3clogic.com:3478' },
+{ urls: 'stun.3cx.com:3478' },
+{ urls: 'stun.a-mm.tv:3478' },
+{ urls: 'stun.aa.net.uk:3478' },
+{ urls: 'stun.acrobits.cz:3478' },
+{ urls: 'stun.actionvoip.com:3478' },
+{ urls: 'stun.advfn.com:3478' },
+{ urls: 'stun.aeta-audio.com:3478' },
+{ urls: 'stun.aeta.com:3478' },
+{ urls: 'stun.altar.com.pl:3478' },
+{ urls: 'stun.annatel.net:3478' },
+{ urls: 'stun.antisip.com:3478' },
+{ urls: 'stun.arbuz.ru:3478' },
+{ urls: 'stun.avigora.fr:3478' },
+{ urls: 'stun.awa-shima.com:3478' },
+{ urls: 'stun.b2b2c.ca:3478' },
+{ urls: 'stun.bahnhof.net:3478' },
+{ urls: 'stun.barracuda.com:3478' },
+{ urls: 'stun.bluesip.net:3478' },
+{ urls: 'stun.bmwgs.cz:3478' },
+{ urls: 'stun.botonakis.com:3478' },
+{ urls: 'stun.budgetsip.com:3478' },
+{ urls: 'stun.cablenet-as.net:3478' },
+{ urls: 'stun.callromania.ro:3478' },
+{ urls: 'stun.callwithus.com:3478' },
+{ urls: 'stun.chathelp.ru:3478' },
+{ urls: 'stun.cheapvoip.com:3478' },
+{ urls: 'stun.ciktel.com:3478' },
+{ urls: 'stun.cloopen.com:3478' },
+{ urls: 'stun.comfi.com:3478' },
+{ urls: 'stun.commpeak.com:3478' },
+{ urls: 'stun.comtube.com:3478' },
+{ urls: 'stun.comtube.ru:3478' },
+{ urls: 'stun.cope.es:3478' },
+{ urls: 'stun.counterpath.com:3478' },
+{ urls: 'stun.counterpath.net:3478' },
+{ urls: 'stun.datamanagement.it:3478' },
+{ urls: 'stun.dcalling.de:3478' },
+{ urls: 'stun.demos.ru:3478' },
+{ urls: 'stun.develz.org:3478' },
+{ urls: 'stun.dingaling.ca:3478' },
+{ urls: 'stun.doublerobotics.com:3478' },
+{ urls: 'stun.dus.net:3478' },
+{ urls: 'stun.easycall.pl:3478' },
+{ urls: 'stun.easyvoip.com:3478' },
+{ urls: 'stun.ekiga.net:3478' },
+{ urls: 'stun.epygi.com:3478' },
+{ urls: 'stun.etoilediese.fr:3478' },
+{ urls: 'stun.faktortel.com.au:3478' },
+{ urls: 'stun.freecall.com:3478' },
+{ urls: 'stun.freeswitch.org:3478' },
+{ urls: 'stun.freevoipdeal.com:3478' },
+{ urls: 'stun.gmx.de:3478' },
+{ urls: 'stun.gmx.net:3478' },
+{ urls: 'stun.gradwell.com:3478' },
+{ urls: 'stun.halonet.pl:3478' },
+{ urls: 'stun.hellonanu.com:3478' },
+{ urls: 'stun.hoiio.com:3478' },
+{ urls: 'stun.hosteurope.de:3478' },
+{ urls: 'stun.ideasip.com:3478' },
+{ urls: 'stun.infra.net:3478' },
+{ urls: 'stun.internetcalls.com:3478' },
+{ urls: 'stun.intervoip.com:3478' },
+{ urls: 'stun.ipcomms.net:3478' },
+{ urls: 'stun.ipfire.org:3478' },
+{ urls: 'stun.ippi.fr:3478' },
+{ urls: 'stun.ipshka.com:3478' },
+{ urls: 'stun.irian.at:3478' },
+{ urls: 'stun.it1.hr:3478' },
+{ urls: 'stun.ivao.aero:3478' },
+{ urls: 'stun.jumblo.com:3478' },
+{ urls: 'stun.justvoip.com:3478' },
+{ urls: 'stun.kanet.ru:3478' },
+{ urls: 'stun.kiwilink.co.nz:3478' },
+{ urls: 'stun.l.google.com:19302
+{ urls: 'stun.linea7.net:3478' },
+{ urls: 'stun.linphone.org:3478' },
+{ urls: 'stun.liveo.fr:3478' },
+{ urls: 'stun.lowratevoip.com:3478' },
+{ urls: 'stun.lugosoft.com:3478' },
+{ urls: 'stun.lundimatin.fr:3478' },
+{ urls: 'stun.magnet.ie:3478' },
+{ urls: 'stun.mgn.ru:3478' },
+{ urls: 'stun.mit.de:3478' },
+{ urls: 'stun.mitake.com.tw:3478' },
+{ urls: 'stun.miwifi.com:3478' },
+{ urls: 'stun.modulus.gr:3478' },
+{ urls: 'stun.myvoiptraffic.com:3478' },
+{ urls: 'stun.mywatson.it:3478' },
+{ urls: 'stun.nas.net:3478' },
+{ urls: 'stun.neotel.co.za:3478' },
+{ urls: 'stun.netappel.com:3478' },
+{ urls: 'stun.netgsm.com.tr:3478' },
+{ urls: 'stun.nfon.net:3478' },
+{ urls: 'stun.noblogs.org:3478' },
+{ urls: 'stun.noc.ams-ix.net:3478' },
+{ urls: 'stun.nonoh.net:3478' },
+{ urls: 'stun.nottingham.ac.uk:3478' },
+{ urls: 'stun.nova.is:3478' },
+{ urls: 'stun.on.net.mk:3478' },
+{ urls: 'stun.ooma.com:3478' },
+{ urls: 'stun.ooonet.ru:3478' },
+{ urls: 'stun.oriontelekom.rs:3478' },
+{ urls: 'stun.outland-net.de:3478' },
+{ urls: 'stun.ozekiphone.com:3478' },
+{ urls: 'stun.personal-voip.de:3478' },
+{ urls: 'stun.phone.com:3478' },
+{ urls: 'stun.pjsip.org:3478' },
+{ urls: 'stun.poivy.com:3478' },
+{ urls: 'stun.powerpbx.org:3478' },
+{ urls: 'stun.powervoip.com:3478' },
+{ urls: 'stun.ppdi.com:3478' },
+{ urls: 'stun.qq.com:3478' },
+{ urls: 'stun.rackco.com:3478' },
+{ urls: 'stun.rapidnet.de:3478' },
+{ urls: 'stun.rb-net.com:3478' },
+{ urls: 'stun.rixtelecom.se:3478' },
+{ urls: 'stun.rockenstein.de:3478' },
+{ urls: 'stun.rolmail.net:3478' },
+{ urls: 'stun.rynga.com:3478' },
+{ urls: 'stun.schlund.de:3478' },
+{ urls: 'stun.services.mozilla.com:3478' },
+{ urls: 'stun.sigmavoip.com:3478' },
+{ urls: 'stun.sip.us:3478' },
+{ urls: 'stun.sipdiscount.com:3478' },
+{ urls: 'stun.sipgate.net:10000
+{ urls: 'stun.sipgate.net:3478' },
+{ urls: 'stun.siplogin.de:3478' },
+{ urls: 'stun.sipnet.net:3478' },
+{ urls: 'stun.sipnet.ru:3478' },
+{ urls: 'stun.siportal.it:3478' },
+{ urls: 'stun.sippeer.dk:3478' },
+{ urls: 'stun.siptraffic.com:3478' },
+{ urls: 'stun.skylink.ru:3478' },
+{ urls: 'stun.sma.de:3478' },
+{ urls: 'stun.smartvoip.com:3478' },
+{ urls: 'stun.smsdiscount.com:3478' },
+{ urls: 'stun.snafu.de:3478' },
+{ urls: 'stun.softjoys.com:3478' },
+{ urls: 'stun.solcon.nl:3478' },
+{ urls: 'stun.solnet.ch:3478' },
+{ urls: 'stun.sonetel.com:3478' },
+{ urls: 'stun.sonetel.net:3478' },
+{ urls: 'stun.sovtest.ru:3478' },
+{ urls: 'stun.speedy.com.ar:3478' },
+{ urls: 'stun.spokn.com:3478' },
+{ urls: 'stun.srce.hr:3478' },
+{ urls: 'stun.ssl7.net:3478' },
+{ urls: 'stun.stunprotocol.org:3478' },
+{ urls: 'stun.symform.com:3478' },
+{ urls: 'stun.symplicity.com:3478' },
+{ urls: 'stun.t-online.de:3478' },
+{ urls: 'stun.tagan.ru:3478' },
+{ urls: 'stun.teachercreated.com:3478' },
+{ urls: 'stun.tel.lu:3478' },
+{ urls: 'stun.telbo.com:3478' },
+{ urls: 'stun.telefacil.com:3478' },
+{ urls: 'stun.tng.de:3478' },
+{ urls: 'stun.twt.it:3478' },
+{ urls: 'stun.u-blox.com:3478' },
+{ urls: 'stun.ucsb.edu:3478' },
+{ urls: 'stun.ucw.cz:3478' },
+{ urls: 'stun.uls.co.za:3478' },
+{ urls: 'stun.unseen.is:3478' },
+{ urls: 'stun.usfamily.net:3478' },
+{ urls: 'stun.veoh.com:3478' },
+{ urls: 'stun.vidyo.com:3478' },
+{ urls: 'stun.vipgroup.net:3478' },
+{ urls: 'stun.viva.gr:3478' },
+{ urls: 'stun.vivox.com:3478' },
+{ urls: 'stun.vline.com:3478' },
+{ urls: 'stun.vo.lu:3478' },
+{ urls: 'stun.vodafone.ro:3478' },
+{ urls: 'stun.voicetrading.com:3478' },
+{ urls: 'stun.voip.aebc.com:3478' },
+{ urls: 'stun.voip.blackberry.com:3478' },
+{ urls: 'stun.voip.eutelia.it:3478' },
+{ urls: 'stun.voiparound.com:3478' },
+{ urls: 'stun.voipblast.com:3478' },
+{ urls: 'stun.voipbuster.com:3478' },
+{ urls: 'stun.voipbusterpro.com:3478' },
+{ urls: 'stun.voipcheap.co.uk:3478' },
+{ urls: 'stun.voipcheap.com:3478' },
+{ urls: 'stun.voipfibre.com:3478' },
+{ urls: 'stun.voipgain.com:3478' },
+{ urls: 'stun.voipgate.com:3478' },
+{ urls: 'stun.voipinfocenter.com:3478' },
+{ urls: 'stun.voipplanet.nl:3478' },
+{ urls: 'stun.voippro.com:3478' },
+{ urls: 'stun.voipraider.com:3478' },
+{ urls: 'stun.voip{ urls: 'stunt.com:3478' },
+{ urls: 'stun.voipwise.com:3478' },
+{ urls: 'stun.voipzoom.com:3478' },
+{ urls: 'stun.vopium.com:3478' },
+{ urls: 'stun.voxox.com:3478' },
+{ urls: 'stun.voys.nl:3478' },
+{ urls: 'stun.voztele.com:3478' },
+{ urls: 'stun.vyke.com:3478' },
+{ urls: 'stun.webcalldirect.com:3478' },
+{ urls: 'stun.whoi.edu:3478' },
+{ urls: 'stun.wifirst.net:3478' },
+{ urls: 'stun.wwdl.net:3478' },
+{ urls: 'stun.xs4all.nl:3478' },
+{ urls: 'stun.xtratelecom.es:3478' },
+{ urls: 'stun.yesss.at:3478' },
+{ urls: 'stun.zadarma.com:3478' },
+{ urls: 'stun.zadv.com:3478' },
+{ urls: 'stun.zoiper.com:3478' },
+{ urls: 'stun1.faktortel.com.au:3478' },
+{ urls: 'stun1.l.google.com:19302' },
+{ urls: 'stun1.voiceeclipse.net:3478' },
+{ urls: 'stun2.l.google.com:19302' },
+{ urls: 'stun3.l.google.com:19302' },
+{ urls: 'stun4.l.google.com:19302' },
+{ urls: 'stunserver.org:3478' }
+  ]
+}});
+</script>
+<script async src="https://arc.io/widget.min.js#JMAhfwPS"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MG63VVPYHZ');
+</script>  
+<script>
+  var tag = document.createElement("script");
+tag.src = "https://www.googletagmanager.com/gtag/js?id=G-MG63VVPYHZ";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+tag.onload = function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-MG63VVPYHZ");
+
+  setInterval(function() {
+gtag("event", "page_view", {
+  page_location: window.location.href,
+  page_title: document.title
+});
+  }, 15000);
+};
+</script>
+
+</HEAD>
+<BODY topmargin=0 leftmargin=0 style="background:transparent;background-color:#000000">
+<script src="https://raw.githubusercontent.com/Mewte/videojs-logobrand/master/src/videojs.logobrand.js"></script>
+<script src='https://vjs.zencdn.net/5-unsafe/video.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+<script src="https://use.fontawesome.com/f4da8251b8.js"></script>
+<script type="text/javascript">
+<!-- 
+eval(unescape('%66%75%6e%63%74%69%6f%6e%20%61%38%65%66%63%38%65%62%31%28%73%29%20%7b%0a%09%76%61%72%20%72%20%3d%20%22%22%3b%0a%09%76%61%72%20%74%6d%70%20%3d%20%73%2e%73%70%6c%69%74%28%22%32%33%31%39%36%34%38%34%22%29%3b%0a%09%73%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%30%5d%29%3b%0a%09%6b%20%3d%20%75%6e%65%73%63%61%70%65%28%74%6d%70%5b%31%5d%20%2b%20%22%36%35%38%31%35%36%22%29%3b%0a%09%66%6f%72%28%20%76%61%72%20%69%20%3d%20%30%3b%20%69%20%3c%20%73%2e%6c%65%6e%67%74%68%3b%20%69%2b%2b%29%20%7b%0a%09%09%72%20%2b%3d%20%53%74%72%69%6e%67%2e%66%72%6f%6d%43%68%61%72%43%6f%64%65%28%28%70%61%72%73%65%49%6e%74%28%6b%2e%63%68%61%72%41%74%28%69%25%6b%2e%6c%65%6e%67%74%68%29%29%5e%73%2e%63%68%61%72%43%6f%64%65%41%74%28%69%29%29%2b%31%29%3b%0a%09%7d%0a%09%72%65%74%75%72%6e%20%72%3b%0a%7d%0a'));
+eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%61%38%65%66%63%38%65%62%31%28%27') + '%3d%77%6b%71%61%6e%7b%3b%09%01%63%6b%6b%74%76%16%6f%62%61%70%62%74%17%3d%1a%73%6e%66%6d%6e%60%73%2f%20%70%61%73%6a%6d%66%7d%6d%71%2f%29%32%0a%0c%67%6a%65%7e%62%74%24%73%6d%63%6f%58%28%7f%66%74%2b%6d%6b%69%63%16%3d%17%63%71%65%63%76%6e%68%68%2e%28%16%7b%04%0f%1a%17%2f%2b%19%45%65%66%60%7a%6b%68%6b%1a%40%4e%1a%66%65%66%78%64%7b%73%17%6c%6e%60%65%68%0a%0f%1a%16%75%69%70%17%64%6e%60%65%68%75%4e%4a%16%3c%16%77%60%6b%66%66%77%28%6b%66%70%61%66%69%72%66%77%28%60%6e%65%65%65%74%6d%72%7b%2c%68%65%66%79%65%77%74%3c%09%00%1f%16%2f%26%19%57%6c%72%1a%6b%6e%6e%69%68%16%66%6c%66%66%6c%70%09%0f%19%1a%7a%67%61%73%25%74%61%7b%50%61%76%72%61%7b%73%4e%65%68%65%61%79%26%23%57%62%60%6d%71%6d%70%2e%2d%1a%2e%66%76%75%69%77%30%2e%27%77%7e%70%28%6d%69%74%74%75%69%6d%63%61%61%25%64%6b%64%2f%23%2e%3c%09%00%1f%16%72%6f%6e%77%25%73%61%75%57%61%79%74%6d%73%7b%41%61%68%62%61%77%21%23%49%62%6b%65%7a%74%29%4a%6f%68%75%77%6b%62%2c%49%6a%63%68%73%24%4f%74%6e%60%6d%64%26%22%1e%2e%2f%23%20%3b%09%0f%19%1a%7a%67%61%73%25%74%61%7b%50%61%76%72%61%7b%73%4e%65%68%65%61%79%26%23%46%64%67%6d%72%7b%2d%4a%68%68%7b%70%6b%6d%2a%45%62%6b%67%77%24%4a%61%7b%66%6b%65%74%23%22%1f%2f%47%4c%55%2e%17%4e%4b%54%55%2e%16%4f%5d%52%2e%2e%3f%04%08%1a%19%75%62%61%72%24%73%6c%75%54%6c%71%71%62%74%76%4e%64%69%62%6c%77%22%2e%41%67%64%62%77%7b%2c%4b%6f%65%75%74%66%6a%29%46%6d%6e%67%76%25%46%6c%66%66%6c%70%77%20%2d%1a%2f%42%67%6c%7b%62%68%7b%2d%56%7e%69%61%2f%28%33%0d%01%19%1a%7b%66%6d%74%2b%77%6d%73%58%65%78%72%61%7a%72%42%62%66%66%6d%71%2e%27%5f%2a%40%66%70%73%66%77%66%6d%63%25%44%66%77%23%23%1e%67%6d%6e%61%64%73%41%4e%20%3c%09%01%7d%3f%0a%0f%09%00%1f%16%72%6f%6e%77%25%73%61%75%57%61%79%74%6d%73%7b%41%61%68%62%61%77%21%23%5d%72%6d%70%24%46%63%6c%6c%76%20%2d%1a%2f%4c%67%78%60%6d%6e%68%2f%31%2b%29%1a%2e%4b%61%6c%7c%71%3f%17%41%68%65%77%6b%61%63%16%31%39%3c%1a%5a%4d%29%40%3e%3d%3e%41%16%40%7c%6e%6e%6b%2f%57%4c%56%35%49%2d%38%30%27%30%34%27%2c%2a%29%36%2d%16%40%66%6e%63%62%53%6c%60%4f%6e%75%2b%3d%32%3f%2c%3a%33%1a%2f%4b%42%55%4a%4e%22%1f%62%69%62%62%1a%4e%65%67%6c%68%2d%16%42%6e%70%66%6a%61%26%31%2a%34%2b%2a%24%34%26%34%27%2b%35%38%32%1a%4a%68%64%61%6b%6d%1e%5a%66%60%68%70%6d%28%32%37%3f%2d%3b%34%2e%2e%3f%04%08%1a%19%77%61%7a%74%78%6c%17%6d%6b%68%62%4b%77%6e%63%61%6d%69%6a%25%66%6a%67%6a%7d%21%75%62%61%72%22%1e%68%77%63%7c%6d%61%6b%75%77%21%3a%05%08%74%0a%0c%67%6a%65%7e%62%74%24%71%6d%61%6b%7e%22%2f%29%1a%3a%3b%1a%73%0c%00%1e%17%69%6e%68%79%61%77%2b%6a%62%60%71%26%20%3c%09%01%7d%2d%3c%0a%0c%16%1f%32%2f%7a%64%74%60%6e%76%3b%19%1a%16%1f%05%08%17%19%3e%6b%69%70%19%64%6e%69%72%7b%3d%29%73%6d%6b%65%6b%2a%64%6b%64%73%69%69%65%62%74%29%3c%09%0f%3d%70%61%63%6d%6f%17%6e%66%34%20%70%6f%74%6a%62%60%71%65%79%27%1a%6a%6a%65%74%74%39%28%75%61%62%6c%68%29%61%73%1a%73%6f%77%25%63%6d%64%68%72%6e%7b%2d%77%6c%6e%68%28%1f%7b%72%70%6d%61%34%20%73%6e%65%76%6e%39%39%2e%27%22%3f%6f%65%6d%60%61%76%30%30%26%2e%2c%3c%76%6c%76%76%2a%66%6e%61%66%64%38%6a%62%68%7b%65%74%3c%27%1a%7f%68%6a%72%6f%3a%24%38%2e%2a%22%27%1a%6e%64%61%67%6f%75%39%29%31%2a%29%22%24%16%62%67%6c%7b%77%6b%63%73%39%27%75%74%7d%64%28%1e%67%68%77%7b%65%74%3a%27%62%7a%73%66%73%31%28%2b%66%6e%61%6b%75%70%24%6f%69%67%6c%74%28%6b%65%70%28%67%65%64%6d%6d%70%25%70%61%69%6e%24%19%66%71%7a%6e%66%6a%68%7e%1a%6a%6f%68%75%77%6b%62%72%16%6e%79%62%6e%66%61%66%3a%27%65%7d%73%67%20%17%69%6e%68%79%77%6e%6b%6e%61%6d%6d%3c%04%0f%0d%00%3a%77%68%72%74%6b%64%16%73%79%64%39%29%66%76%75%69%77%30%2e%27%74%66%65%28%63%69%68%6c%6b%61%7a%6e%7a%72%25%74%73%60%64%76%64%68%68%7a%64%64%72%25%64%6b%64%2f%47%68%6b%76%6d%6d%7a%2f%4f%4d%57%26%4a%6d%73%62%2b%4b%67%69%6c%65%62%6e%2c%30%32%64%61%37%3a%33%2d%30%30%28%6d%65%62%61%71%2b%69%3b%74%3e%20%17%75%7d%67%65%39%27%66%6a%66%6b%61%63%68%75%6d%66%6c%2b%73%6b%66%24%60%66%6e%63%62%28%64%6e%61%60%72%74%62%21%34%3a%26%73%6d%6b%65%6b%3b23196484%36%35%39%30%39%31%38' + unescape('%27%29%29%3b'));
+// -->
+</script>
+   <script>
+    (function (window, videojs) {
+  var examplePlayer = (window.examplePlayer = videojs("vjsplayer", {
+    html5: {
+      hls: {
+        overrideNative: true,
+        smoothQualityChange: true,
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        enableLowInitialPlaylist: true,
+        overrideNativeAudioTracks: true,
+        overrideNativeVideoTracks: true,
+      },
+    },
+  }));
+
+  // Tetapkan bitrate awal yang lebih rendah untuk memulai pemutaran lebih cepat
+  examplePlayer.tech_.hls.options.startLevel = 1;
+
+  // Pilih resolusi terendah saat pertama load
+  examplePlayer.on("loadedmetadata", function () {
+    examplePlayer.quality("low");
+  });
+
+  // Sesuaikan resolusi dengan koneksi internet
+  function updateQuality() {
+  // Dapatkan tipe koneksi saat ini
+  var connectionType = window.navigator.connection.effectiveType;
+
+  // Pilih resolusi berdasarkan tipe koneksi
+  switch (connectionType) {
+    case "cellular":
+      examplePlayer.quality("low");
+      break;
+    case "wifi":
+      examplePlayer.quality("medium");
+      break;
+    case "wired":
+      examplePlayer.quality("high");
+      break;
+    default:
+      examplePlayer.quality("low");
+      break;
+  }
+}
+
+  // Jalankan updateQuality() setiap 5 detik
+  setInterval(updateQuality, 5000);
+
+  // Perbarui resolusi saat level berubah
+  examplePlayer.on("levelchange", function () {
+    updateQuality();
+  });
+
+  // Tampilkan teks keterangan kualitas di tengah atas video
+  function showQualityLabel(quality) {
+    var qualityLabel = document.getElementById("qualityLabel");
+    qualityLabel.textContent = "Playback in " + quality + " Quality";
+  }
+
+  // Perbarui teks keterangan saat kualitas berubah
+  examplePlayer.on("qualitychange", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Tampilkan teks keterangan saat video dimulai
+  examplePlayer.on("play", function () {
+    var currentQuality = examplePlayer.qualityLevels().find(".vjs-selected").label();
+    showQualityLabel(currentQuality);
+  });
+
+  // Set frame rate menjadi 24fps (23.976)
+  examplePlayer.tech_.hls.on("manifestParsed", function () {
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.appendMode_ = "segments";
+    examplePlayer.tech_.hls.masterPlaylistController_.mainSegmentLoader_.mediaSource_.videoBuffer_.segmentParser_.parseSegmentBinaryData = function (
+      data,
+      byteOffset,
+      segmentInfo
+    ) {
+      var segment = this.parseSegmentBinaryData.originalMethod.call(this, data, byteOffset, segmentInfo);
+      segment.videoFrameRate = 23.976; // Mengubah frame rate menjadi 24fps (23.976)
+      return segment;
+    };
+  });
+})(window, videojs);
+  </script>
+<script>
+var player = videojs('vjsplayer');
+
+var skipBehindButton = player.controlBar.addChild("button");
+var skipBehindButtonDom = skipBehindButton.el();
+skipBehindButtonDom.innerHTML = "OpenTV";
+skipBehindButton.addClass("buttonClass");
+    
+skipBehindButtonDom.onclick = function(){
+    skipS3MV(-30);
+}  
+
+var skipAheadButton = player.controlBar.addChild("button");
+var skipAheadButtonDom = skipAheadButton.el();
+skipAheadButtonDom.innerHTML = "";
+skipAheadButton.addClass("buttonClass");
+    
+skipAheadButtonDom.onclick = function(){
+    skipS3MV(30);
+}  
+
+function skipS3MV(skipBy) {
+    player.currentTime(player.currentTime() + skipBy);
+}
+</script>
+
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+<script>
+    DisableDevtool({
+        ondevtoolopen: (type) => {
+            const info = 'devtool opened!; type =' + type;
+            alert(info); // If you are worried about blocking the page, use console.warn(info); and open the console to view
+        },
+    })
+</script>
+</div>
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4834164,4,605,110,55,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4834164&101" alt="counters" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</BODY></HTML>
